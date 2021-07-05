@@ -1,23 +1,23 @@
 <?xml version="1.0" ?>
 <robot name="mr_robot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<transmission name="Rev27_tran">
+<transmission name="right_motor_joint_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Rev27">
+  <joint name="right_motor_joint">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Rev27_actr">
+  <actuator name="right_motor_joint_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="Rev28_tran">
+<transmission name="left_motor_joint_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Rev28">
+  <joint name="left_motor_joint">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Rev28_actr">
+  <actuator name="left_motor_joint_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
