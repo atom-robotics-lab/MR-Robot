@@ -1,0 +1,184 @@
+<?xml version="1.0" ?>
+<robot name="mr_robot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+
+	<gazebo>
+		<plugin filename="libgazebo_ros_diff_drive.so" name="diff_drive">
+			<!-- Set control loop update rate -->
+			<update_rate>100</update_rate>
+				
+			<!-- Name of left joint, defaults to `left_joint` -->
+			<leftJoint>left_motor_joint</leftJoint>
+
+			<!-- Name of right joint, defaults to `right_joint` -->
+			<rightJoint>right_motor_joint</rightJoint>
+
+			<publish_rate>10</publish_rate>
+
+			<!-- The distance from the center of one wheel to the other, in meters, defaults to 0.34 m -->
+			<wheelSeparation>0.199</wheelSeparation>
+
+			<!-- Diameter of the wheels, in meters, defaults to 0.15 m -->
+			<wheelDiameter>0.107</wheelDiameter>
+
+			<!-- Topics -->
+			<commandTopic>cmd_vel</commandTopic>
+			<odometryTopic>odom</odometryTopic>
+
+			<!-- Set if odom required -->
+			<publish_odom>true</publish_odom>
+			<publish_odom_tf>true</publish_odom_tf>
+
+			<!-- Frame IDs -->
+			<odometry_frame>odom</odometry_frame>
+			<robot_base_frame>base_link</robot_base_frame>
+
+			<!-- Set odom covariance -->
+			<covariance_x>0.0001</covariance_x>
+			<covariance_y>0.0001</covariance_y>
+			<covariance_z>0.0001</covariance_z>
+		</plugin>
+	</gazebo>
+
+	<!--
+	<gazebo reference="base_scan">
+		<sensor name="hls_lfcd_lds" type="ray">
+			<always_on>true</always_on>
+			<visualize>true</visualize>
+			<pose>-0.064 0 0.121 0 0 0</pose>
+			<update_rate>5</update_rate>
+			<ray>
+			  <scan>
+				<horizontal>
+				  <samples>360</samples>
+				  <resolution>1.000000</resolution>
+				  <min_angle>0.000000</min_angle>
+				  <max_angle>6.280000</max_angle>
+				</horizontal>
+			  </scan>
+			  <range>
+				<min>0.120000</min>
+				<max>3.5</max>
+				<resolution>0.015000</resolution>
+			  </range>
+			  <noise>
+				<type>gaussian</type>
+				<mean>0.0</mean>
+				<stddev>0.01</stddev>
+			  </noise>
+			</ray>
+			<plugin name="turtlebot3_laserscan" filename="libgazebo_ros_ray_sensor.so">
+			  <ros>
+				 <namespace>/tb3</namespace>
+				<remapping>~/out:=scan</remapping>
+			  </ros>
+			  <output_type>sensor_msgs/LaserScan</output_type>
+			  <frame_name>base_scan</frame_name>
+			</plugin>
+		  </sensor>
+	</gazebo>
+
+	<gazebo reference="imu_link">
+		<sensor name="tb3_imu" type="imu">
+			<always_on>true</always_on>
+			<update_rate>200</update_rate>
+			<imu>
+			  <angular_velocity>
+				<x>
+				  <noise type="gaussian">
+					<mean>0.0</mean>
+					<stddev>2e-4</stddev>
+				  </noise>
+				</x>
+				<y>
+				  <noise type="gaussian">
+					<mean>0.0</mean>
+					<stddev>2e-4</stddev>
+				  </noise>
+				</y>
+				<z>
+				  <noise type="gaussian">
+					<mean>0.0</mean>
+					<stddev>2e-4</stddev>
+				  </noise>
+				</z>
+			  </angular_velocity>
+			  <linear_acceleration>
+				<x>
+				  <noise type="gaussian">
+					<mean>0.0</mean>
+					<stddev>1.7e-2</stddev>
+				  </noise>
+				</x>
+				<y>
+				  <noise type="gaussian">
+					<mean>0.0</mean>
+					<stddev>1.7e-2</stddev>
+				  </noise>
+				</y>
+				<z>
+				  <noise type="gaussian">
+					<mean>0.0</mean>
+					<stddev>1.7e-2</stddev>
+				  </noise>
+				</z>
+			  </linear_acceleration>
+			</imu>
+			<plugin name="turtlebot3_imu" filename="libgazebo_ros_imu_sensor.so">
+			  <ros>
+				<namespace>/tb3</namespace> 
+				<remapping>~/out:=imu</remapping>
+			  </ros>
+			</plugin>
+		  </sensor>
+	</gazebo>
+
+
+
+	<gazebo reference="realsense_camera">
+		<sensor name="camera" type="depth">
+			<always_on>true</always_on>
+			<visualize>true</visualize>
+			<update_rate>30</update_rate>
+			<camera name="intel_realsense_r200">
+			  <horizontal_fov>1.02974</horizontal_fov>
+			  <image>
+				<width>1920</width>
+				<height>1080</height>
+				<format>R8G8B8</format>
+			  </image>
+			  <clip>
+				<near>0.02</near>
+				<far>300</far>
+			  </clip>
+			  <noise>
+				<type>gaussian</type>
+				<mean>0.0</mean>
+				<stddev>0.007</stddev>
+			  </noise>
+			  <distortion>
+				<k1>0.1</k1>
+				<k2>0.2</k2>
+				<k3>0.3</k3>
+				<p1>0.4</p1>
+				<p2>0.5</p2>
+				<center>0.5 0.5</center>
+			  </distortion>
+			</camera>
+			  <plugin name="camera_driver" filename="libgazebo_ros_camera.so">
+				<ros>
+				   <namespace>test_cam</namespace> 
+				   <argument>image_raw:=image_demo</argument> 
+				   <argument>camera_info:=camera_info_demo</argument> 
+				</ros>
+				 camera_name>omit so it defaults to sensor name</camera_name
+				 frame_name>omit so it defaults to link name</frameName
+				<hack_baseline>0.07</hack_baseline>
+				<min_depth>0.001</min_depth>
+				<max_depth>300.0</max_depth>
+			  </plugin>
+		  </sensor>
+	  </gazebo>
+	-->
+
+</robot>
