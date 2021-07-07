@@ -5,7 +5,7 @@
 	<gazebo>
 		<plugin filename="libgazebo_ros_diff_drive.so" name="diff_drive">
 			<!-- Set control loop update rate -->
-			<update_rate>100</update_rate>
+			<updateRate>100</updateRate>
 				
 			<!-- Name of left joint, defaults to `left_joint` -->
 			<leftJoint>left_motor_joint</leftJoint>
@@ -26,12 +26,16 @@
 			<odometryTopic>odom</odometryTopic>
 
 			<!-- Set if odom required -->
-			<publish_odom>true</publish_odom>
-			<publish_odom_tf>true</publish_odom_tf>
+			<publishOdom>true</publishOdom>
+			<publishOdomTF>true</publishOdomTF>
+
+			<publishTF>true</publishTF>
 
 			<!-- Frame IDs -->
-			<odometry_frame>odom</odometry_frame>
-			<robot_base_frame>base_link</robot_base_frame>
+			<odometryFrame>odom</odometryFrame>
+			<robotBaseFrame>base_link</robotBaseFrame>
+
+			<odometrySource>world</odometrySource>
 
 			<!-- Set odom covariance -->
 			<covariance_x>0.0001</covariance_x>
