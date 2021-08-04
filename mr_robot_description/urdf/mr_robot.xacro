@@ -6,9 +6,9 @@
 <xacro:include filename="$(find mr_robot_description)/urdf/mr_robot.gazebo" />
 <link name="base_link">
   <inertial>
-    <origin rpy="0 0 0" xyz="0.0008927921119775883 0.003383716812376711 0.05308182610349619"/>
-    <mass value="1.017219924928983"/>
-    <inertia ixx="0.009572" ixy="-1e-06" ixz="-1.1e-05" iyy="0.010869" iyz="-4e-06" izz="0.019625"/>
+    <origin rpy="0 0 0" xyz="-0.00101458512283434 -0.0007739653318165107 0.06722998744578039"/>
+    <mass value="11.545387094155112"/>
+    <inertia ixx="0.101768" ixy="-1.2e-05" ixz="0.000834" iyy="0.108037" iyz="4.2e-05" izz="0.192707"/>
   </inertial>
   <visual>
     <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -25,195 +25,87 @@
   </collision>
 </link>
 
-<link name="r_wheel_1">
+<link name="r_tyre_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="1.974679100791299e-14 -0.002525912487815571 -1.9068080447937064e-14"/>
-    <mass value="0.17056892200116738"/>
-    <inertia ixx="0.000171" ixy="-0.0" ixz="-0.0" iyy="0.000291" iyz="0.0" izz="0.000171"/>
+    <origin rpy="0 0 0" xyz="9.682659047986764e-08 -0.002525549104224978 -5.1894622932202594e-08"/>
+    <mass value="1.4397484276442625"/>
+    <inertia ixx="0.00144" ixy="-0.0" ixz="-0.0" iyy="0.00246" iyz="0.0" izz="0.00144"/>
   </inertial>
   <visual>
-    <origin rpy="0 0 0" xyz="-0.00225 0.0962 -0.0534"/>
+    <origin rpy="0 0 0" xyz="0.003445 0.10058 -0.052283"/>
     <geometry>
-      <mesh filename="package://mr_robot_description/meshes/r_wheel_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mr_robot_description/meshes/r_tyre_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin rpy="0 0 0" xyz="-0.00225 0.0962 -0.0534"/>
+    <origin rpy="0 0 0" xyz="0.003445 0.10058 -0.052283"/>
     <geometry>
-      <mesh filename="package://mr_robot_description/meshes/r_wheel_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mr_robot_description/meshes/r_tyre_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="l_wheel_1">
+<link name="l_tyre_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="-1.6607375197263963e-14 0.006133491954579892 -9.936496070395151e-15"/>
-    <mass value="0.33673316347081705"/>
-    <inertia ixx="0.000211" ixy="-0.0" ixz="0.0" iyy="0.000351" iyz="-0.0" izz="0.000211"/>
+    <origin rpy="0 0 0" xyz="9.682664276963737e-08 0.0025262758714060807 -5.18946233832307e-08"/>
+    <mass value="1.4397484276442625"/>
+    <inertia ixx="0.00144" ixy="-0.0" ixz="0.0" iyy="0.00246" iyz="-0.0" izz="0.00144"/>
   </inertial>
   <visual>
-    <origin rpy="0 0 0" xyz="-0.00275 -0.1032 -0.0534"/>
+    <origin rpy="0 0 0" xyz="0.003445 -0.09882 -0.052283"/>
     <geometry>
-      <mesh filename="package://mr_robot_description/meshes/l_wheel_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mr_robot_description/meshes/l_tyre_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin rpy="0 0 0" xyz="-0.00275 -0.1032 -0.0534"/>
+    <origin rpy="0 0 0" xyz="0.003445 -0.09882 -0.052283"/>
     <geometry>
-      <mesh filename="package://mr_robot_description/meshes/l_wheel_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mr_robot_description/meshes/l_tyre_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="lidar_cover_1">
+<link name="lidar_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="-0.13381670754509806 -0.002195336861350322 -0.11800000000000005"/>
-    <mass value="0.31059474429759854"/>
-    <inertia ixx="0.000448" ixy="-3e-06" ixz="-0.0" iyy="0.000606" iyz="0.0" izz="0.001054"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.209625 -0.007 -0.225"/>
-    <geometry>
-      <mesh filename="package://mr_robot_description/meshes/lidar_cover_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.209625 -0.007 -0.225"/>
-    <geometry>
-      <mesh filename="package://mr_robot_description/meshes/lidar_cover_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
-<link name="l_tyre_wall_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="-0.002842639819893089 0.02036548235514131 -0.01397208252909686"/>
-    <mass value="0.5799187471048897"/>
-    <inertia ixx="0.000566" ixy="-5e-06" ixz="-2e-06" iyy="0.001977" iyz="1.5e-05" izz="0.002185"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.0025 -0.07525 -0.08"/>
-    <geometry>
-      <mesh filename="package://mr_robot_description/meshes/l_tyre_wall_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.0025 -0.07525 -0.08"/>
-    <geometry>
-      <mesh filename="package://mr_robot_description/meshes/l_tyre_wall_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
-<link name="r_tyre_wall_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="-0.002842639819893113 -0.02036548235514124 -0.01397208252909593"/>
-    <mass value="0.5799187471048897"/>
-    <inertia ixx="0.000566" ixy="5e-06" ixz="-2e-06" iyy="0.001977" iyz="-1.5e-05" izz="0.002185"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.0025 0.06825 -0.08"/>
-    <geometry>
-      <mesh filename="package://mr_robot_description/meshes/r_tyre_wall_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.0025 0.06825 -0.08"/>
-    <geometry>
-      <mesh filename="package://mr_robot_description/meshes/r_tyre_wall_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
-<link name="cover_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="0.13333687933642632 -0.0004534984394031767 0.0024952118809939416"/>
-    <mass value="2.5548768748457116"/>
-    <inertia ixx="0.02109" ixy="6.7e-05" ixz="2e-06" iyy="0.021151" iyz="-0.0" izz="0.04223"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="0.15 -0.0035 -0.1"/>
-    <geometry>
-      <mesh filename="package://mr_robot_description/meshes/cover_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="0.15 -0.0035 -0.1"/>
-    <geometry>
-      <mesh filename="package://mr_robot_description/meshes/cover_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
-<link name="ydlidar_x4_v1_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="-0.048294448377836835 -2.8189256484623115e-17 0.06720114222279103"/>
+    <origin rpy="0 0 0" xyz="-0.006349391522619652 0.0008793633835904074 -0.002389798737942095"/>
     <mass value="1.1515616542314233"/>
     <inertia ixx="0.000489" ixy="-0.0" ixz="-0.000148" iyy="0.000861" iyz="0.0" izz="0.000987"/>
   </inertial>
   <visual>
-    <origin rpy="0 0 0" xyz="-0.144813 -0.0035 -0.04"/>
+    <origin rpy="0 0 0" xyz="-0.0967 0.001759 -0.108682"/>
     <geometry>
-      <mesh filename="package://mr_robot_description/meshes/ydlidar_x4_v1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mr_robot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin rpy="0 0 0" xyz="-0.144813 -0.0035 -0.04"/>
+    <origin rpy="0 0 0" xyz="-0.0967 0.001759 -0.108682"/>
     <geometry>
-      <mesh filename="package://mr_robot_description/meshes/ydlidar_x4_v1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mr_robot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<joint name="right_motor_joint" type="continuous">
-  <origin rpy="0 0 0" xyz="0.00225 -0.0962 0.0534"/>
+<joint name="R_Rev" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.003445 -0.10058 0.052283"/>
   <parent link="base_link"/>
-  <child link="r_wheel_1"/>
-  <axis xyz="-0.0 -1.0 0.0"/>
+  <child link="r_tyre_1"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
 </joint>
 
-<joint name="left_motor_joint" type="continuous">
-  <origin rpy="0 0 0" xyz="0.00275 0.1032 0.0534"/>
+<joint name="L_Rev" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.003445 0.09882 0.052283"/>
   <parent link="base_link"/>
-  <child link="l_wheel_1"/>
-  <axis xyz="0.0 1.0 -0.0"/>
+  <child link="l_tyre_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
-<joint name="Rigid48" type="fixed">
-  <origin rpy="0 0 0" xyz="0.064812 0.0035 0.185"/>
-  <parent link="ydlidar_x4_v1_1"/>
-  <child link="lidar_cover_1"/>
-</joint>
-
-<joint name="Rigid51" type="fixed">
-  <origin rpy="0 0 0" xyz="0.0025 0.07525 0.08"/>
+<joint name="lidar_fixed" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0967 -0.001759 0.108682"/>
   <parent link="base_link"/>
-  <child link="l_tyre_wall_1"/>
-</joint>
-
-<joint name="Rigid52" type="fixed">
-  <origin rpy="0 0 0" xyz="0.0025 -0.06825 0.08"/>
-  <parent link="base_link"/>
-  <child link="r_tyre_wall_1"/>
-</joint>
-
-<joint name="Rigid53" type="fixed">
-  <origin rpy="0 0 0" xyz="-0.15 0.0035 0.1"/>
-  <parent link="base_link"/>
-  <child link="cover_1"/>
-</joint>
-
-<joint name="Rigid55" type="fixed">
-  <origin rpy="0 0 0" xyz="0.144813 0.0035 0.04"/>
-  <parent link="base_link"/>
-  <child link="ydlidar_x4_v1_1"/>
+  <child link="lidar_1"/>
 </joint>
 
 </robot>
