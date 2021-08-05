@@ -3,7 +3,9 @@
 
 <xacro:include filename="$(find mr_robot_description)/urdf/materials.xacro" />
 <xacro:include filename="$(find mr_robot_description)/urdf/mr_robot.trans" />
-<xacro:include filename="$(find mr_robot_description)/urdf/mr_robot.gazebo" />
+<xacro:include filename="$(find mr_robot_description)/gazebo/mr_robot.gazebo" />
+<xacro:include filename="$(find mr_robot_description)/gazebo/mr_robot_plugins.gazebo" />
+
 <link name="base_link">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.00101458512283434 -0.0007739653318165107 0.06722998744578039"/>
@@ -88,14 +90,14 @@
   </collision>
 </link>
 
-<joint name="R_Rev" type="continuous">
+<joint name="right_motor_joint" type="continuous">
   <origin rpy="0 0 0" xyz="-0.003445 -0.10058 0.052283"/>
   <parent link="base_link"/>
   <child link="r_tyre_1"/>
-  <axis xyz="-0.0 -1.0 -0.0"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
 </joint>
 
-<joint name="L_Rev" type="continuous">
+<joint name="left_motor_joint" type="continuous">
   <origin rpy="0 0 0" xyz="-0.003445 0.09882 0.052283"/>
   <parent link="base_link"/>
   <child link="l_tyre_1"/>

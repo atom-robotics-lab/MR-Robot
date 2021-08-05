@@ -5,11 +5,11 @@ mr_robot_controller:
     publish_rate: 50
 
   # Position Controllers --------------------------------------
-  R_Rev_position_controller:
+  right_motor_joint_position_controller:
     type: effort_controllers/JointPositionController
-    joint: R_Rev
+    joint: right_motor_joint
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  L_Rev_position_controller:
+  left_motor_joint_position_controller:
     type: effort_controllers/JointPositionController
-    joint: L_Rev
+    joint: left_motor_joint
     pid: {p: 100.0, i: 0.01, d: 10.0}
