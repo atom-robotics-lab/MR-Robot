@@ -1,19 +1,9 @@
 digraph G {
-"L_motor_clamp_1" -> "L_motor_1"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
-"base_link" -> "L_motor_clamp_1"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
-"R_motor_clamp_1" -> "R_motor_1"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
-"base_link" -> "R_motor_clamp_1"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
-"odom" -> "base_link"[label=" Broadcaster: /gazebo\nAverage rate: 100.201\nBuffer length: 4.98\nMost recent transform: 37.91\nOldest transform: 32.93\n"];
-"base_link" -> "motor_driver_1"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
-"base_link" -> "battery_1"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
-"base_link" -> "cover_1"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
-"base_link" -> "front_cover_1"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
-"base_link" -> "f_chaster_1"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
-"base_link" -> "b_chaster_1"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
-"L_motor_1" -> "L_wheel_1"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10.2\nBuffer length: 5.0\nMost recent transform: 1625665773.757\nOldest transform: 1625665768.757\n"];
-"R_motor_1" -> "R_wheel_1"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10.2\nBuffer length: 5.0\nMost recent transform: 1625665773.757\nOldest transform: 1625665768.757\n"];
+"base_link" -> "lidar_1"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"base_link" -> "l_tyre_1"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10.204\nBuffer length: 4.9\nMost recent transform: 1628198827.671\nOldest transform: 1628198822.771\n"];
+"base_link" -> "r_tyre_1"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10.204\nBuffer length: 4.9\nMost recent transform: 1628198827.671\nOldest transform: 1628198822.771\n"];
 edge [style=invis];
  subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
-"Recorded at time: 37.923"[ shape=plaintext ] ;
-}->"odom";
+"Recorded at time: 1628198827.7437356"[ shape=plaintext ] ;
+}->"base_link";
 }
