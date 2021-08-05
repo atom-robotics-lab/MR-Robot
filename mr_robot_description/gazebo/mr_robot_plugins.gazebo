@@ -44,9 +44,9 @@
 		</plugin>
 	</gazebo>
 
-	<!--
-	<gazebo reference="base_scan">
-		<sensor name="hls_lfcd_lds" type="ray">
+	
+	<gazebo reference="lidar_1">
+		<sensor name="front_rplidar" type="ray">
 			<always_on>true</always_on>
 			<visualize>true</visualize>
 			<pose>-0.064 0 0.121 0 0 0</pose>
@@ -71,17 +71,14 @@
 				<stddev>0.01</stddev>
 			  </noise>
 			</ray>
-			<plugin name="turtlebot3_laserscan" filename="libgazebo_ros_ray_sensor.so">
-			  <ros>
-				 <namespace>/tb3</namespace>
-				<remapping>~/out:=scan</remapping>
-			  </ros>
-			  <output_type>sensor_msgs/LaserScan</output_type>
-			  <frame_name>base_scan</frame_name>
+			<plugin name="gazebo_ros_front_rplidar_controller" filename="libgazebo_ros_laser.so">
+				<topicName>/laser/scan</topicName>
+				<frameName>lidar_1</frameName>
 			</plugin>
 		  </sensor>
 	</gazebo>
 
+<!--
 	<gazebo reference="imu_link">
 		<sensor name="tb3_imu" type="imu">
 			<always_on>true</always_on>
