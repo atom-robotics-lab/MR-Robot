@@ -1,0 +1,13 @@
+<launch>
+
+	<node name="map_server" pkg="map_server" type="map_server" args="$(find mr_robot_nav)/maps/turtle_bot_house.map.yaml" />
+	
+	<include file="$(find mr_robot_nav)/launch/amcl.launch" />
+	<include file="$(find mr_robot_nav)/launch/move_base.launch" />
+	
+	<!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ebot_nav)/config/my.rviz" output = "screen"/> -->
+
+	<rosparam file="$(find mr_robot-Nav)/config/room_waypoints.yaml" command="load"/>
+
+</launch>
+

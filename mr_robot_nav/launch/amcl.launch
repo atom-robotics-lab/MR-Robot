@@ -1,0 +1,18 @@
+<launch>
+
+	<node pkg="amcl" type="amcl" name="amcl">
+
+	  <remap from="scan" to="scan" />
+	  <remap from="cmd_vel" to="cmd_vel"/>
+	  <remap from="odom" to="odom" />
+	  
+	  <rosparam file="$(find mr_robot_nav)/config/amcl_params.yaml" command="load" />
+	  <!-- Publish scans from best pose at a max of 10 Hz -->
+
+	</node>
+
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
+
+</launch>
