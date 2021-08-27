@@ -29,8 +29,8 @@ resample_interval: 1
 transform_tolerance: 0.1
 recovery_alpha_slow: 0.0
 recovery_alpha_fast: 0.0
-initial_pose_x: -1
-initial_pose_y: 0
+initial_pose_x: -3
+initial_pose_y: 1
 initial_pose_a: 0
 
 
