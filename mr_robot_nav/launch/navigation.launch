@@ -7,7 +7,5 @@
 	
 	<!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ebot_nav)/config/my.rviz" output = "screen"/> -->
 
-	<rosparam file="$(find mr_robot-Nav)/config/room_waypoints.yaml" command="load"/>
-
 </launch>
 
