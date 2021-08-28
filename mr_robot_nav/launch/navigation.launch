@@ -1,6 +1,6 @@
 <launch>
 
-	<node name="map_server" pkg="map_server" type="map_server" args="$(find mr_robot_nav)/maps/turtle_bot_house.map.yaml" />
+	<node name="map_server" pkg="map_server" type="map_server" args="$(find mr_robot_nav)/maps/turtlebot3_house.yaml" />
 	
 	<include file="$(find mr_robot_nav)/launch/amcl.launch" />
 	<include file="$(find mr_robot_nav)/launch/move_base.launch" />
