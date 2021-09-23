@@ -1,0 +1,14 @@
+<launch>
+
+	<node pkg="amcl" type="amcl" name="amcl">
+
+	  <remap from="scan" to="/laser/scan" />
+	  <remap from="cmd_vel" to="cmd_vel"/>
+	  <remap from="odom" to="odom" />
+	  
+	  <rosparam file="$(find mr_robot_nav)/config/amcl_params.yaml" command="load" />
+	  <!-- Publish scans from best pose at a max of 10 Hz -->
+
+	</node>
+
+</launch>
