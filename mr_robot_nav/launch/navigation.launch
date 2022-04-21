@@ -1,0 +1,11 @@
+<launch>
+
+	<node name="map_server" pkg="map_server" type="map_server" args="$(find mr_robot_nav)/maps/turtlebot3_house.yaml" />
+	
+	<include file="$(find mr_robot_nav)/launch/amcl.launch" />
+	<include file="$(find mr_robot_nav)/launch/move_base.launch" />
+	
+	<!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ebot_nav)/config/my.rviz" output = "screen"/> -->
+
+</launch>
+
