@@ -5,6 +5,10 @@
 <xacro:include filename="$(find mr_robot_description)/urdf/mr_robot.trans" />
 <xacro:include filename="$(find mr_robot_description)/gazebo/mr_robot.gazebo" />
 <xacro:include filename="$(find mr_robot_description)/gazebo/mr_robot_plugins.gazebo" />
+<xacro:property name="camera_depth_frame" value="0.05" /> 
+
+<xacro:property name="camera_link" value="0.05" />
+
 
 <link name="base_link">
   <inertial>
@@ -90,6 +94,58 @@
   </collision>
 </link>
 
+<link name="camera_depth_frame">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 7.85"/>
+      <geometry>
+    
+        <mesh filename="package://mr_robot_description/meshes/kinect.stl" scale="0.005 0.005 0.005"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 7.85"/>
+      <geometry>
+    <!--<box size="${kinect_link} ${kinect_link} ${kinect_link}"/>-->
+        <mesh filename="package://mr_robot_description/meshes/kinect.stl" scale="0.005 0.005 0.005"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 7.85"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+ <!-- Camera -->
+  
+   <link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${camera_link} ${camera_link} ${camera_link}"/> 
+        </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${camera_link} ${camera_link} ${camera_link}"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+   
+  
+
 <joint name="right_motor_joint" type="continuous">
   <origin rpy="0 0 0" xyz="-0.003445 -0.10058 0.052283"/>
   <parent link="base_link"/>
@@ -108,6 +164,20 @@
   <origin rpy="0 0 0" xyz="0.0967 -0.001759 0.108682"/>
   <parent link="base_link"/>
   <child link="lidar_1"/>
+</joint>
+
+
+<joint name="camera_joint" type="fixed">
+  
+  <origin rpy="0 0 0" xyz="0.0967 -0.001759 0.163682"/>
+  <parent link="base_link"/>
+  <child link="camera_link"/>
+</joint> 
+
+<joint name="depth_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0967 -0.001759 0.143682"/>
+  <parent link="base_link"/>
+  <child link="camera_depth_frame"/>
 </joint>
 
 </robot>
