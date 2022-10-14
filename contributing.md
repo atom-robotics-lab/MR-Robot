@@ -29,7 +29,7 @@ Here are a few things that will help us help resolve your issues:
    ```bash
     git checkout -b my-branch-name
     ```
-* Make changes, commit and Push to your branch. [Submit a Pull Request][https://github.com/atom-robotics-lab/MR-Robot/pulls]
+* Make changes, commit and Push to your branch. [Submit a Pull Request](https://github.com/atom-robotics-lab/MR-Robot/pulls)
 
 * Wait for your pull request to be reviewed and merged!
 
