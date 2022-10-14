@@ -37,7 +37,7 @@
 
   <p align="center">
     This is the repo for the <a href="https://github.com/atom-robotics-lab/MR-Robot">MR-Robot: ModulaR Robot</a> Project, Mr robot is autonomous navigation robot made by A.T.O.M Robotics capable of doing multiple day to day operations such as mapping, navigation for transportation, sanitaion etc. Various other operations can also be performed thanks to its modularity.
-    If you’re interested in helping to improve our Project</a>, find out how to <a href="https://github.com/atom-robotics-lab/MR-Robot/contributing.md">contribute<a>. 
+    If you’re interested in helping to improve our Project</a>, find out how to <a href="https://github.com/atom-robotics-lab/MR-Robot/blob/main/contributing.md">contribute<a>. 
     <br />
     <a href=""><strong>Demo video »</strong></a>
     <br />
@@ -111,16 +111,16 @@ To get a local copy up and running follow these simple example steps.
 
 This is an example of how to list things you need to use the software and how to install them.
 * Ros
-  - Refer to the official [Ros installation guide](http://wiki.ros.org/ROS/Installation)
-  - Installing map-server, move_base and amcl
+  - Refer to our [Ros installation guide](https://atom-robotics-lab.github.io/wiki/markdown/ros/installation.html)
+  - Installing Navigation specific dependencies: map-server, move_base and amcl
     ```sh
     sudo apt install ros-noetic-map-server ros-noetic-move-base ros-noetic-amcl
     ```
 
 * Opencv
-```sh
-sudo apt install libopencv-dev python3-opencv
-```
+  ```sh
+  sudo apt install libopencv-dev python3-opencv
+  ```
 
 ### Installation
 
@@ -148,9 +148,39 @@ sudo apt install libopencv-dev python3-opencv
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-- The `conf.py` file contains all the sphinx configuration.
-- All the `.rst` files are present in the `/markdown` dir.
-- Custom html templates can be found in the `/_templates` dir.
+- The `mr_robot_description` dir contains all the bot model description files.
+- The `mr_robot_gazebo` dir contains all the world description files.
+- The `mr_robot_nav` dir contains all the config files for enabling navigation and planning.
+
+In order to run the simulation you are required to do the following:
+
+* For running the `navigation simulation`.
+
+  - Switch to the main branch of the repository.
+    ```sh
+    git checkout main
+    ```
+  - Launch the gazebo world.
+    ```sh
+    roslaunch mr_robot_gazebo turtlebot3_house.launch
+    ```
+  - Launch the navigation file.
+    ```sh
+    roslaunch mr_robot_nav navigation.launch
+    ```
+    **_NOTE:_** Make sure that you have installed the navigation dependencies before running the navigation launch file.<br />
+
+  - Setting the goal
+    In the Rviz add a 2d on the map.<br /> <br />
+
+  Voila! The bot will start moving towards the goal now.<br /><br />
+
+* For running `Octomapping simulation`.
+
+  - Switch to the point_cloud_navigation branch.
+    ```sh
+    git checkout point_cloud_navigation
+    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -163,10 +193,6 @@ Use this space to show useful examples of how a project can be used. Additional 
 - [x] Version 1
     - [x] Adding camera
     - [x] Adding 3d camera
-    - [x] 
-    - [ ]
-    - [ ]
-    - [ ]
 
 See the [open issues](https://github.com/atom-robotics-lab/MR-Robot/issues) for a full list of proposed features (and known issues).
 
@@ -193,8 +219,8 @@ For more info refer to [contributing.md](https://github.com/atom-robotics-lab/MR
 
 
 
-<!-- CONTACT -->
-## Contact
+<!-- CONTACTS -->
+## Contacts
 
 Our Socials - [Linktree](https://linktr.ee/atomlabs) - atom@inventati.org
 
@@ -205,11 +231,17 @@ Demo: [Video]("")
 
 
 <!-- ACKNOWLEDGMENTS-->
-## Acknowledgments
+## Acknowledgement
 
-* []()
-* []()
-* []()
+* [Our wiki](https://atom-robotics-lab.github.io/wiki)
+* [ROS Official Documentation](http://wiki.ros.org/Documentation)
+* [Opencv Official Documentation](https://docs.opencv.org/4.x/)
+* [Rviz Documentation](http://wiki.ros.org/rviz)
+* [Gazebo Tutorials](https://classic.gazebosim.org/tutorials)
+* [Ubuntu Installation guide](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview)
+* [Raspberrypi Documentation](https://www.raspberrypi.com/documentation/)
+* [Esp32 Documentation](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/)
+* [Blender Documentaion](https://docs.blender.org/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
