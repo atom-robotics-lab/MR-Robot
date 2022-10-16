@@ -18,11 +18,11 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][https://github.com/atom-robotics-lab/MR-Robot/graphs/contributors]
-[![Forks][forks-shield]][https://github.com/atom-robotics-lab/wiki/network/members]
-[![Stargazers][stars-shield]][https://github.com/atom-robotics-lab/wiki/stargazers]
-[![Issues][issues-shield]][https://github.com/atom-robotics-lab/MR-Robot/issues]
-[![LinkedIn][linkedin-shield]][https://www.linkedin.com/company/a-t-o-m-robotics-lab/]
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
@@ -375,4 +375,64 @@ rosrun octomap_server octomap_saver -f custom_map.bt
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+For more info refer to [contributing.md](https://github.com/atom-robotics-lab/MR-Robot/blob/main/contributing.md)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- CONTACTS -->
+## Contacts
+
+Our Socials - [Linktree](https://linktr.ee/atomlabs) - atom@inventati.org
+
+Demo: [Video]("")
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ACKNOWLEDGMENTS-->
+## Acknowledgement
+
+* [Our wiki](https://atom-robotics-lab.github.io/wiki)
+* [ROS Official Documentation](http://wiki.ros.org/Documentation)
+* [Opencv Official Documentation](https://docs.opencv.org/4.x/)
+* [Rviz Documentation](http://wiki.ros.org/rviz)
+* [Gazebo Tutorials](https://classic.gazebosim.org/tutorials)
+* [Ubuntu Installation guide](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview)
+* [Raspberrypi Documentation](https://www.raspberrypi.com/documentation/)
+* [Esp32 Documentation](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/)
+* [Blender Documentaion](https://docs.blender.org/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/atom-robotics-lab/MR-Robot.svg?style=for-the-badge
+[contributors-url]: https://github.com/atom-robotics-lab/MR-Robot/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/atom-robotics-lab/MR-Robot.svg?style=for-the-badge
+[forks-url]: https://github.com/atom-robotics-lab/wiki/network/members
+[stars-shield]: https://img.shields.io/github/stars/atom-robotics-lab/MR-Robot.svg?style=for-the-badge
+[stars-url]: https://github.com/atom-robotics-lab/wiki/stargazers
+[issues-shield]: https://img.shields.io/github/issues/atom-robotics-lab/MR-Robot.svg?style=for-the-badge
+[issues-url]: https://github.com/atom-robotics-lab/MR-Robot/issues
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/company/a-t-o-m-robotics-lab/
 
