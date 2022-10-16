@@ -18,11 +18,11 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![Contributors][contributors-shield]][https://github.com/atom-robotics-lab/MR-Robot/graphs/contributors]
+[![Forks][forks-shield]][https://github.com/atom-robotics-lab/wiki/network/members]
+[![Stargazers][stars-shield]][https://github.com/atom-robotics-lab/wiki/stargazers]
+[![Issues][issues-shield]][https://github.com/atom-robotics-lab/MR-Robot/issues]
+[![LinkedIn][linkedin-shield]][https://www.linkedin.com/company/a-t-o-m-robotics-lab/]
 
 
 
@@ -130,6 +130,8 @@ Source the setup file in newly created ‘devel’ directory so that our ROS env
 source devel/setup.sh
 ```
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Gazebo Setup
 
 __Edit your bashrc file__
@@ -162,6 +164,8 @@ source ~/.bashrc
  ```sh
  roslaunch mr_robot_gazebo turtlebot3_house.launch 
 ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Depth Sensor Setup
 
@@ -283,11 +287,14 @@ On Rviz add __PointCloud2__ and change topic to __/kinect/depth/points__
 Now change Fixed Frame in __Rviboot order mai ubuntu haz__: __map__ to __odom__
           __!!!Hola depth camera working!!!__
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 ### Octomapping
 
 The OctoMap library implements a 3D occupancy grid mapping approach, providing data structures and mapping algorithms in C++ particularly suited for robotics. The map implementation is based on an octree and is designed to meet the following requirements:
 
-__Full_3D_model:__ The map is able to model arbitrary environments without prior assumptions about it. The representation models occupied areas as well as free space. Unknown areas of the environment are implicitly encoded in the map. While the distinction between free and occupied space is essential for safe robot navigation, information about unknown areas is important, e.g., for autonomous exploration of an environment.
+__Full 3D model:__ The map is able to model arbitrary environments without prior assumptions about it. The representation models occupied areas as well as free space. Unknown areas of the environment are implicitly encoded in the map. While the distinction between free and occupied space is essential for safe robot navigation, information about unknown areas is important, e.g., for autonomous exploration of an environment.
 
 
 __Updatable:__ It is possible to add new information or sensor readings at any time. Modeling and updating is done in a probabilistic fashion. This accounts for sensor noise or measurements which result from dynamic changes in the environment, e.g., because of dynamic objects. Furthermore, multiple robots are able to contribute to the same map and a previously recorded map is extendable when new areas are explored.
@@ -299,7 +306,7 @@ __Flexible:__ The extent of the map does not have to be known in advance. Instea
 __Compact:__ The map is stored efficiently, both in memory and on disk. It is possible to generate compressed files for later usage or convenient exchange between robots even under bandwidth constraints.
 
 
-
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 __Install Octomap__
 ```sh
@@ -339,6 +346,7 @@ roslaunch octomap_server octomap_mapping.launch
 
 Now on Rviz add __MarkerArray__ and change topic to __/occupied_cells_vis_array__
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Creating map
 
@@ -356,6 +364,8 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 ``` 
 this will create your map
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Saving the new map
 
 Now that we have created a new map, we need to save it to be able to use it in future. Open a new terminal in the maps directory inside the mr_robot_nav package and execute the following command there :
@@ -364,5 +374,5 @@ Now that we have created a new map, we need to save it to be able to use it in f
 rosrun octomap_server octomap_saver -f custom_map.bt
 ```
 
-
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
