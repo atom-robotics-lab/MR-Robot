@@ -278,19 +278,25 @@ Now run these comands to get depth image on rviz and change fixed frame from map
 roslaunch freenect_launch freenect.launch depth_registration:=true
 
 ```
-ow on Rviz add __PointCloud2__ and change topic to __/kinect/depth/points__
+On Rviz add __PointCloud2__ and change topic to __/kinect/depth/points__
 
-Now change Fixed Frame in __Rviz__: __map__ to __odom__
+Now change Fixed Frame in __Rviboot order mai ubuntu haz__: __map__ to __odom__
           __!!!Hola depth camera working!!!__
 
 ### Octomapping
 
 The OctoMap library implements a 3D occupancy grid mapping approach, providing data structures and mapping algorithms in C++ particularly suited for robotics. The map implementation is based on an octree and is designed to meet the following requirements:
 
-__Full_3D_model_:__ The map is able to model arbitrary environments without prior assumptions about it. The representation models occupied areas as well as free space. Unknown areas of the environment are implicitly encoded in the map. While the distinction between free and occupied space is essential for safe robot navigation, information about unknown areas is important, e.g., for autonomous exploration of an environment.
-__Updatable_:__ It is possible to add new information or sensor readings at any time. Modeling and updating is done in a probabilistic fashion. This accounts for sensor noise or measurements which result from dynamic changes in the environment, e.g., because of dynamic objects. Furthermore, multiple robots are able to contribute to the same map and a previously recorded map is extendable when new areas are explored.
-__Flexible_:__ The extent of the map does not have to be known in advance. Instead, the map is dynamically expanded as needed. The map is multi-resolution so that, for instance, a high-level planner is able to use a coarse map, while a local planner may operate using a fine resolution. This also allows for efficient visualizations which scale from coarse overviews to detailed close-up views.
-__Compact_:__ The map is stored efficiently, both in memory and on disk. It is possible to generate compressed files for later usage or convenient exchange between robots even under bandwidth constraints.
+__Full_3D_model:__ The map is able to model arbitrary environments without prior assumptions about it. The representation models occupied areas as well as free space. Unknown areas of the environment are implicitly encoded in the map. While the distinction between free and occupied space is essential for safe robot navigation, information about unknown areas is important, e.g., for autonomous exploration of an environment.
+
+
+__Updatable:__ It is possible to add new information or sensor readings at any time. Modeling and updating is done in a probabilistic fashion. This accounts for sensor noise or measurements which result from dynamic changes in the environment, e.g., because of dynamic objects. Furthermore, multiple robots are able to contribute to the same map and a previously recorded map is extendable when new areas are explored.
+
+
+__Flexible:__ The extent of the map does not have to be known in advance. Instead, the map is dynamically expanded as needed. The map is multi-resolution so that, for instance, a high-level planner is able to use a coarse map, while a local planner may operate using a fine resolution. This also allows for efficient visualizations which scale from coarse overviews to detailed close-up views.
+
+
+__Compact:__ The map is stored efficiently, both in memory and on disk. It is possible to generate compressed files for later usage or convenient exchange between robots even under bandwidth constraints.
 
 
 
