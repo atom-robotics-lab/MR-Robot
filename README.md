@@ -54,21 +54,23 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#installation">INSTALLATION</a></li>      
-        <ul>
-            <li><a href="#prerequisites">Prerequisites</a></li>
-            <li><a href="#installation">Installation</a></li>
+      <a href="#about-the-project">About The Project</a>      
+      <a href="#installation">INSTALLATION</a>      
+      <ul>        
+        <li><a href="#mr._robot_setup">MR. Robot setup</a></li>
+        <li><a href="#gazebo_setup">Gazebo Setup</a></li>           
+       </ul>
+       <a href="#depth_sensor_setup">Depth Sensor Setup</a>
+       <ul>
+       <li><a href="#pointcloud2">PointCloud2</a></li>
+       <li><a href="#octomapping">Octomapping</a></li>
+       <ul>
+        <li><a href="#install_octomap">Install Octomap</a></li>
+        <li><a href="#octomap_dependencies">Octomap dependencies</a></li>
         </ul>
-        <ul>
-        </li>
-        <li><a href="#usage">Usage</a></li>
-        <li><a href="#roadmap">Roadmap</a></li>
-        <li><a href="#contributing">Contributing</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#acknowledgments">Acknowledgments</a></li>
-        </ul>
+        <a href="#creating_map">Creating map</a>
+        <a href="#saving_the_new_map">Saving the new map</a>        
+    </li>
   </ol>
 </details>
 
@@ -155,10 +157,10 @@ source ~/.bashrc
  roslaunch mr_robot_gazebo turtlebot3_house.launch 
 ```
 
-## Depth_sensor setup
+## Depth Sensor Setup
 
 
-### Point_Cloud
+### PointCloud2
 
 To 
 As always, start with an update and upgrade.
