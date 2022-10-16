@@ -62,13 +62,12 @@
         <li><a href="#mr-robot-setup">MR Robot setup</a></li>
         <li><a href="#gazebo-setup">Gazebo Setup</a></li>           
        </ul>
+       </li>
+       <li>
        <a href="#depth-sensor-setup">Depth Sensor Setup</a>
        <ul>
        <li><a href="#pointcloud2">PointCloud2</a></li>
-       <li><a href="#octomapping">Octomapping</a></li>
-       <ul>
-        <li><a href="#install-octomap">Install Octomap</a></li>
-        <li><a href="#octomap-dependencies">Octomap dependencies</a></li>
+       <li><a href="#octomapping">Octomapping</a></li>       
         </ul>
         </li>
         <li>
