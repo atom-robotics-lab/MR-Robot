@@ -59,10 +59,10 @@
       <li>      
       <a href="#installation">INSTALLATION</a>      
       <ul>        
-        <li><a href="#mr._robot_setup">MR. Robot setup</a></li>
-        <li><a href="#gazebo_setup">Gazebo Setup</a></li>           
+        <li><a href="#mr.-robot-setup">MR. Robot setup</a></li>
+        <li><a href="#gazebo-setup">Gazebo Setup</a></li>           
        </ul>
-       <a href="#depth_sensor_setup">Depth Sensor Setup</a>
+       <a href="#depth-sensor-setup">Depth Sensor Setup</a>
        <ul>
        <li><a href="#pointcloud2">PointCloud2</a></li>
        <li><a href="#octomapping">Octomapping</a></li>
@@ -70,8 +70,13 @@
         <li><a href="#install_octomap">Install Octomap</a></li>
         <li><a href="#octomap_dependencies">Octomap dependencies</a></li>
         </ul>
-        <a href="#creating_map">Creating map</a>
-        <a href="#saving_the_new_map">Saving the new map</a>        
+        </li>
+        <li>
+        <a href="#creating-map">Creating map</a>
+        </li>
+        <li>
+        <a href="#saving-the-new-map">Saving the new map</a>
+        </li>        
     </li>
   </ol>
 </details>
