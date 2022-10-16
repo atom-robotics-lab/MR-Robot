@@ -56,21 +56,19 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+        <li><a href="#installation">INSTALLATION</a></li>      
+        <ul>
+            <li><a href="#prerequisites">Prerequisites</a></li>
+            <li><a href="#installation">Installation</a></li>
+        </ul>
+        <ul>
+        </li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#contributing">Contributing</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#acknowledgments">Acknowledgments</a></li>
+        </ul>
   </ol>
 </details>
 
@@ -124,7 +122,7 @@ Source the setup file in newly created ‘devel’ directory so that our ROS env
 source devel/setup.sh
 ```
 
-## Gzebo Setup
+## Gazebo Setup
 
 __Edit your bashrc file__
 
@@ -277,9 +275,7 @@ Now change Fixed Frame in __Rviz__: __map__ to __odom__
 
 __Install Octomap__
 ```sh
-cd
 sudo apt-get install ros-noetic-octomap ros-noetic-octomap-mapping ros-noetic-octomap-msgs ros-noetic-octomap-ros ros-noetic-octomap-rviz-plugins ros-noetic-octomap-server
-
 ```
 __Octomap dependencies__
 
@@ -337,7 +333,7 @@ this will create your map
 Now that we have created a new map, we need to save it to be able to use it in future. Open a new terminal in the maps directory inside the mr_robot_nav package and execute the following command there :
 
 ```sh
-rosrun octomap_server octomap_saver -f custom_map
+rosrun octomap_server octomap_saver -f custom_map.bt
 ```
 
 
