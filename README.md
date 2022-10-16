@@ -59,7 +59,7 @@
       <li>      
       <a href="#installation">INSTALLATION</a>      
       <ul>        
-        <li><a href="#mr.-robot-setup">MR. Robot setup</a></li>
+        <li><a href="#mr-robot-setup">MR Robot setup</a></li>
         <li><a href="#gazebo-setup">Gazebo Setup</a></li>           
        </ul>
        <a href="#depth-sensor-setup">Depth Sensor Setup</a>
@@ -67,8 +67,8 @@
        <li><a href="#pointcloud2">PointCloud2</a></li>
        <li><a href="#octomapping">Octomapping</a></li>
        <ul>
-        <li><a href="#install_octomap">Install Octomap</a></li>
-        <li><a href="#octomap_dependencies">Octomap dependencies</a></li>
+        <li><a href="#install-octomap">Install Octomap</a></li>
+        <li><a href="#octomap-dependencies">Octomap dependencies</a></li>
         </ul>
         </li>
         <li>
@@ -110,7 +110,7 @@ If you’re interested in helping to improve our Project</a>, find out how to <a
 
 # INSTALLATION
 
-## MR. Robot setup
+## MR Robot setup
 
 Clone MR. RObot repository into cd catkin_ws/src/
 
