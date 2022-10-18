@@ -152,7 +152,9 @@ Use this space to show useful examples of how a project can be used. Additional 
 - The `mr_robot_gazebo` dir contains all the world description files.
 - The `mr_robot_nav` dir contains all the config files for enabling navigation and planning.
 
-In order to run the simulation you are required to do the following:
+<center><img src="images/mapping.png" height="400" width="900"></center></br></br>
+
+In order to run the simulation you are required to do the following:</br>
 
 * For running the `navigation simulation`.
 
@@ -193,6 +195,7 @@ In order to run the simulation you are required to do the following:
 - [x] Version 1
     - [x] Adding camera
     - [x] Adding 3d camera
+    - [ ] Hardware prototype
 
 See the [open issues](https://github.com/atom-robotics-lab/MR-Robot/issues) for a full list of proposed features (and known issues).
 
