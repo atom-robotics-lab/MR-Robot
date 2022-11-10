@@ -200,7 +200,7 @@ Get the libfreenect repository from GitHub
 
 ```sh
 cd
-git clone https://github.com/OpenKinect/libfreenect
+git clone git@github.com:OpenKinect/libfreenect.git
 
 ```
 
@@ -256,7 +256,7 @@ Now we will download the required ROS package.
 
 ```cd
 cd ~/catkin_ws/src
-git clone https://github.com/ros-drivers/freenect_stack.git
+git clone git@github.com:ros-drivers/freenect_stack.git
 ```
 
 
@@ -315,6 +315,7 @@ sudo apt-get install ros-noetic-octomap ros-noetic-octomap-mapping ros-noetic-oc
 __Octomap dependencies__
 
 ```sh
+cd
 git clone git@github.com:OctoMap/octomap.git
 cd octomap
 mkdir build
