@@ -69,7 +69,7 @@
   </collision>
 </link>
 
-<link name="laser_frame">
+<link name="lidar_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.006349391522619652 0.0008793633835904074 -0.002389798737942095"/>
     <mass value="1.1515616542314233"/>
@@ -107,7 +107,7 @@
 <joint name="lidar_fixed" type="fixed">
   <origin rpy="0 0 0" xyz="0.0967 -0.001759 0.108682"/>
   <parent link="base_link"/>
-  <child link="laser_frame"/>
+  <child link="lidar_1"/>
 </joint>
 
 </robot>
