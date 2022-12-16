@@ -69,7 +69,7 @@
   </collision>
 </link>
 
-<link name="lidar_1">
+<link name="laser_frame">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.006349391522619652 0.0008793633835904074 -0.002389798737942095"/>
     <mass value="1.1515616542314233"/>
