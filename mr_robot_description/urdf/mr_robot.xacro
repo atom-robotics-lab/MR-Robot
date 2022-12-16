@@ -108,7 +108,6 @@
   <origin rpy="0 0 0" xyz="0.0967 -0.001759 0.108682"/>
   <parent link="base_link"/>
   <child link="laser_frame"/>
-  <axis xyz="-0.0 1.0 -0.0"/>
 </joint>
 
 </robot>
