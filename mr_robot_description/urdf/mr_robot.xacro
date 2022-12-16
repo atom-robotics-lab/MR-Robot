@@ -107,7 +107,7 @@
 <joint name="lidar_fixed" type="fixed">
   <origin rpy="0 0 0" xyz="0.0967 -0.001759 0.108682"/>
   <parent link="base_link"/>
-  <child link="lidar_1"/>
+  <child link="lidar_frame"/>
 </joint>
 
 </robot>
