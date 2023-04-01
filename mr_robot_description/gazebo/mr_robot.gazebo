@@ -5,10 +5,6 @@
 <xacro:property name="wheel_color" value="Gazebo/Black" />
 <xacro:property name="lidar_color" value="Gazebo/DarkGrey" />
 
-<gazebo>
-  <plugin filename="libgazebo_ros_control.so" name="control"/>
-</gazebo>
-
 <gazebo reference="base_link">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
