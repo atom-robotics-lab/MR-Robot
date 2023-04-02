@@ -1,0 +1,113 @@
+<?xml version="1.0" ?>
+<robot name="mr_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find mr_robot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find mr_robot_description)/urdf/mr_robot.trans" />
+<xacro:include filename="$(find mr_robot_description)/gazebo/mr_robot.gazebo" />
+<xacro:include filename="$(find mr_robot_description)/gazebo/mr_robot_plugins.gazebo" />
+
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.00101458512283434 -0.0007739653318165107 0.06722998744578039"/>
+    <mass value="11.545387094155112"/>
+    <inertia ixx="0.101768" ixy="-1.2e-05" ixz="0.000834" iyy="0.108037" iyz="4.2e-05" izz="0.192707"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_tyre_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="9.682659047986764e-08 -0.002525549104224978 -5.1894622932202594e-08"/>
+    <mass value="1.4397484276442625"/>
+    <inertia ixx="0.00144" ixy="-0.0" ixz="-0.0" iyy="0.00246" iyz="0.0" izz="0.00144"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.003445 0.10058 -0.052283"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/r_tyre_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.003445 0.10058 -0.052283"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/r_tyre_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="l_tyre_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="9.682664276963737e-08 0.0025262758714060807 -5.18946233832307e-08"/>
+    <mass value="1.4397484276442625"/>
+    <inertia ixx="0.00144" ixy="-0.0" ixz="0.0" iyy="0.00246" iyz="-0.0" izz="0.00144"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.003445 -0.09882 -0.052283"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/l_tyre_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.003445 -0.09882 -0.052283"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/l_tyre_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.006349391522619652 0.0008793633835904074 -0.002389798737942095"/>
+    <mass value="1.1515616542314233"/>
+    <inertia ixx="0.000489" ixy="-0.0" ixz="-0.000148" iyy="0.000861" iyz="0.0" izz="0.000987"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0967 0.001759 -0.108682"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0967 0.001759 -0.108682"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="right_motor_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.003445 -0.10058 0.052283"/>
+  <parent link="base_link"/>
+  <child link="r_tyre_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="left_motor_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.003445 0.09882 0.052283"/>
+  <parent link="base_link"/>
+  <child link="l_tyre_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="lidar_fixed" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0967 -0.001759 0.108682"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+</robot>
