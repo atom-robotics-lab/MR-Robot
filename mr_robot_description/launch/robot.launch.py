@@ -20,9 +20,12 @@ def generate_launch_description():
 	# TODO: take rviz config file as launch arg 
 	# use this one as default
 	rviz_config = pkg_mr_robot_desc + '/config/urdf.rviz'
+	bridge_config = pkg_mr_robot_desc + '/config/bridge.yaml'
 
+	# launch configs to use launch args
 	use_sim_time = LaunchConfiguration('use_sim_time')
 	with_rviz = LaunchConfiguration('rviz')
+	with_bridge = LaunchConfiguration('with_bridge')
 
 	# create urdf from xacro 
 	robot_xacro_config = xacro.process_file(xacro_path)
@@ -55,7 +58,24 @@ def generate_launch_description():
 					{'use_sim_time': use_sim_time},
 					{'use_tf_static': True},
 					{'robot_description': robot_urdf}],
-				arguments = [robot_urdf])	
+				arguments = [robot_urdf])
+
+	# parameter bridge node to bridge different gz and tos 2 topics
+	ros_gz_bridge = Node(package="ros_gz_bridge", 
+				executable="parameter_bridge",
+                parameters = [
+                    {'config_file': bridge_config}],
+				condition=IfCondition(with_bridge)
+                )
+
+	
+	lidar_stf = Node(package='tf2_ros', executable='static_transform_publisher',
+            name = 'lidar_stf',
+                arguments = [
+                    '0', '0', '0', '0', '0', '0', '1',
+                    'lidar_1',
+                    'mr_robot/base_link/front_rplidar'
+            ])
 
 	# use_sim_time launch argument
 	arg_use_sim_time = DeclareLaunchArgument('use_sim_time',
@@ -65,11 +85,18 @@ def generate_launch_description():
 	# argument to specify if rviz needs to be launched
 	arg_with_rviz = DeclareLaunchArgument('rviz', default_value='false',
 											description="Set true to launch rviz")
+
+	# argument to specify if bridge needs to be launched
+	arg_with_bridge = DeclareLaunchArgument('with_bridge', default_value='true',
+											description="Set true to bridge ROS 2 & Gz topics")
 	
 	return LaunchDescription([
 		arg_use_sim_time,
 		arg_with_rviz,
+		arg_with_bridge,
 		spawn_robot,
+		ros_gz_bridge,
 		rviz,
-		state_publisher
+		state_publisher,
+		lidar_stf
 	])

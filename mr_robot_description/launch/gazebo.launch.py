@@ -12,26 +12,27 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
 
-    pkg_ros_gz_sim = get_package_share_directory("ros_gz_sim")
-    pkg_mr_robot_desc = get_package_share_directory("mr_robot_description")
+    pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
+    pkg_mr_robot_desc = get_package_share_directory('mr_robot_description')
 
     # launch GZ Sim with empty world
     gz_sim = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(
-                    os.path.join(pkg_ros_gz_sim, "launch", "gz_sim.launch.py")
+                    os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')
                 ),
                 launch_arguments={
-                    'gz_args' : 'empty.sdf'
+                    'gz_args' : pkg_mr_robot_desc + '/worlds/empty.sdf'
                 }.items()          
             )
     
     # spawn robot with rviz
     robot = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(
-                    os.path.join(pkg_mr_robot_desc, "launch", "robot.launch.py")
+                    os.path.join(pkg_mr_robot_desc, 'launch', 'robot.launch.py')
                 ),
                 launch_arguments={
-                    'rviz': 'true'
+                    'rviz': 'true',
+                    'with_bridge': 'true'
                 }.items()
             )
 

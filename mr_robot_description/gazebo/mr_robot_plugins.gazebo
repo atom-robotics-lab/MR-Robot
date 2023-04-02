@@ -9,6 +9,11 @@
     		<right_joint>right_motor_joint</right_joint>
     		<wheel_separation>0.199</wheel_separation>
     		<wheel_radius>0.535</wheel_radius>
+			<topic>cmd_vel</topic>
+			<odom_topic>odom</odom_topic>
+			<tf_topic>tf</tf_topic>
+			<frame_id>odom</frame_id>
+			<child_frame_id>base_link</child_frame_id>
     		<odom_publish_frequency>1</odom_publish_frequency>
     		<max_linear_acceleration>1</max_linear_acceleration>
     		<min_linear_acceleration>-1</min_linear_acceleration>
