@@ -14,12 +14,8 @@ find_package(ament_cmake REQUIRED)
 # install directories
 install(
   DIRECTORY
-  config
-  gazebo
   launch
-  meshes
   model
-  urdf
   worlds
   DESTINATION
   share/${PROJECT_NAME}/
