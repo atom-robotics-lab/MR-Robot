@@ -42,7 +42,7 @@ def generate_launch_description():
 	return LaunchDescription([
 		DeclareLaunchArgument('map',
 					default_value=map_yaml_file,
-					description="/home/noemoji041/ros_workspaces/ros2_ws/src/MR-Robot/mr_robot_nav/maps/"),
+					description="/home/noemoji041/ros_workspaces/ros2_ws/src/MR-Robot/mr_robot_nav/maps/map.yaml"),
 		DeclareLaunchArgument('params_file',
 		     		default_value=nav2_config_file,
 		     		description="/home/noemoji041/ros_workspaces/ros2_ws/src/MR-Robot/mr_robot_nav/config/"),

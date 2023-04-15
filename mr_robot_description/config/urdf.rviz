@@ -9,6 +9,7 @@ Panels:
         - /RobotModel1
         - /LaserScan1
         - /Map1
+        - /Map1/Status1
         - /Map1/Update Topic1
         - /Path1
       Splitter Ratio: 0.5
@@ -144,13 +145,13 @@ Visualization Manager:
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Best Effort
-        Value: /global_costmap/costmap
+        Value: /map
       Update Topic:
         Depth: 5
         Durability Policy: Transient Local
         History Policy: Keep Last
         Reliability Policy: Best Effort
-        Value: /global_costmap/costmap_updates
+        Value: /map_updates
       Use Timestamp: false
       Value: true
     - Alpha: 1
@@ -263,5 +264,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1850
-  X: 14
-  Y: 194
+  X: 127
+  Y: 277
