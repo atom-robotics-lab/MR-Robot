@@ -19,10 +19,8 @@ def generate_launch_description():
 					default=os.path.join(pkg_mr_robot_nav, 'maps', 'map.yaml'))
 	nav2_config_file = LaunchConfiguration('params', 
 						default=os.path.join(pkg_mr_robot_nav, 'config', 'nav2.yaml'))
-	# rviz_config_file = LaunchConfiguration('rviz_config',
-	# 					default=os.path.join(pkg_nav2_bringup, 'rviz', 'nav2_default_view.rviz'))
 
-	# nav2 bringup launch file
+
 	nav2_bringup_launch_file = IncludeLaunchDescription(
 					PythonLaunchDescriptionSource(os.path.join(pkg_nav2_bringup, 'launch', 'bringup_launch.py')),
 					launch_arguments={
@@ -31,13 +29,6 @@ def generate_launch_description():
 						'params_file': nav2_config_file}.items(),
 				)
 
-	# rviz2
-	# rviz2 = Node(package='rviz2', executable='rviz2',
-	# 				name='rviz2',
-	# 				arguments=['-d', rviz_config_file],
-	# 				parameters=[{'use_sim_time': use_sim_time}],
-	# 				output='screen',
-	# 				condition=IfCondition(with_rviz))	
 	
 	return LaunchDescription([
 		DeclareLaunchArgument('map',
@@ -49,9 +40,5 @@ def generate_launch_description():
 		DeclareLaunchArgument('use_sim_time',
                                 default_value=use_sim_time,
                                 description="Use sim clock or not"),
-		# DeclareLaunchArgument('with_rviz',
-		# 						default_value=with_rviz,
-		# 						description='Launch rviz2'),
 		nav2_bringup_launch_file,
-		# rviz2
 		])
