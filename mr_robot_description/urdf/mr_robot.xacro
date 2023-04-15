@@ -6,6 +6,15 @@
 <xacro:include filename="$(find mr_robot_description)/gazebo/mr_robot.gazebo" />
 <xacro:include filename="$(find mr_robot_description)/gazebo/mr_robot_plugins.gazebo" />
 
+<!-- <link name ="world"> -->
+<!-- </link> -->
+<!--  -->
+<!-- <joint name="base_joint"> -->
+<!-- <type: "floating"/> -->
+<!-- <parent_frame_id: "world"/> -->
+<!-- <child_frame_id: "base_link"/> -->
+<!-- </joint> -->
+
 <link name="base_link" gravity="0 0 -9.8">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.00101458512283434 -0.0007739653318165107 0.06722998744578039"/>
