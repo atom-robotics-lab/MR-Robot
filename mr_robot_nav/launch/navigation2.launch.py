@@ -42,10 +42,10 @@ def generate_launch_description():
 	return LaunchDescription([
 		DeclareLaunchArgument('map',
 					default_value=map_yaml_file,
-					description="/home/kakashi/catkin_ws/src/MR-Robot/mr_robot_nav/maps/"),
+					description="/home/noemoji041/ros_workspaces/ros2_ws/src/MR-Robot/mr_robot_nav/maps/"),
 		DeclareLaunchArgument('params_file',
 		     		default_value=nav2_config_file,
-		     		description="/home/kakashi/catkin_ws/src/MR-Robot/mr_robot_nav/config/"),
+		     		description="/home/noemoji041/ros_workspaces/ros2_ws/src/MR-Robot/mr_robot_nav/config/"),
 		DeclareLaunchArgument('use_sim_time',
                                 default_value=use_sim_time,
                                 description="Use sim clock or not"),
