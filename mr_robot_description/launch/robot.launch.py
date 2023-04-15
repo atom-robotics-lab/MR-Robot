@@ -80,7 +80,7 @@ def generate_launch_description():
 	map_stf = Node(package='tf2_ros', executable='static_transform_publisher',
             name = 'map_stf',
                 arguments = [
-                    '0', '0', '0', '0', '0', '0', '1',
+                    '2.0', '0', '0', '0', '0', '-1.57', '100',
                     'map',
                     'odom'
             ])
