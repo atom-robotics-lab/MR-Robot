@@ -164,7 +164,9 @@ This is our repo for the <a href="https://github.com/atom-robotics-lab/MR-Robot"
    ```
 
   <img src="images/nav.gif"/>
+
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
