@@ -128,7 +128,9 @@ This is our repo for the <a href="https://github.com/atom-robotics-lab/MR-Robot"
  
  This file launches an empty world in Gz Sim includes the [`robot.launch.py`](https://github.com/atom-robotics-lab/MR-Robot/blob/ros2/mr_robot_description/launch/robot.launch.py) launch file which spawns MR Robot using the the xacro files and also launches `rviz2` and `paramter_bridges` for various topics according to the [`bridge.yaml`](https://github.com/atom-robotics-lab/MR-Robot/blob/ros2/mr_robot_description/config/bridge.yaml) file.
  
-![Screenshot from 2023-04-02 17-03-14](https://user-images.githubusercontent.com/23265149/229350481-d145bc9b-6e34-48f1-9de6-067c818278f2.png)
+<img src="images/world1.gif"/>
+<img src="images/world2.gif"/>
+
 
 ## Navigation
 
