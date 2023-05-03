@@ -151,7 +151,7 @@ This is our repo for the <a href="https://github.com/atom-robotics-lab/MR-Robot"
    ```bash
    ros2 run nav2_map_server map_saver_cli -f name_of_map_file
    ```
-   <img src="../images/map.gif" />
+   <img src="images/map.gif" />
 
 ### Navigation2
  * Install [navstack2](https://navigation.ros.org/build_instructions/index.html) for ros foxy.
@@ -163,7 +163,7 @@ This is our repo for the <a href="https://github.com/atom-robotics-lab/MR-Robot"
    ros2 launch mr_robot_nav navigation2.launch.py
    ```
 
-  <img src="../images/nav.gif"/>
+  <img src="images/nav.gif"/>
 <!-- CONTRIBUTING -->
 ## Contributing
 
