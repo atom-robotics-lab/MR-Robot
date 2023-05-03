@@ -130,6 +130,40 @@ This is our repo for the <a href="https://github.com/atom-robotics-lab/MR-Robot"
  
 ![Screenshot from 2023-04-02 17-03-14](https://user-images.githubusercontent.com/23265149/229350481-d145bc9b-6e34-48f1-9de6-067c818278f2.png)
 
+## Navigation
+
+### Mapping with Slam Toolbox
+  * Install [slam_toolbox](https://github.com/SteveMacenski/slam_toolbox) from apt for ros2 foxy using:
+    ```bash
+    sudo apt install ros-foxy-slam-toolbox
+    ```
+  * Make sure you UNPAUSE physics by clicking "play" button in bottom left corner of ignition
+
+ * Open another terminal and launch slam_toolbox for mapping and rviz2 using `online_sync_launch.py` from `mr_robot_nav` package:
+   ```bash
+   ros2 launch mr_robot_nav online_sync_launch.py
+   ```
+ * Open another terminal and run the ros2 `teleop_twist_keyboard` node using:
+   ```bash
+   ros2 run teleop_twist_keyboard teleop_twist_keyboard
+   ```
+ * Use teleop to control the bot and map the world (as shown in the gif below). Save the map using:
+   ```bash
+   ros2 run nav2_map_server map_saver_cli -f name_of_map_file
+   ```
+   <img src="../images/map.gif" />
+
+### Navigation2
+ * Install [navstack2](https://navigation.ros.org/build_instructions/index.html) for ros foxy.
+
+ * Make sure you UNPAUSE physics by clicking "play" button in bottom left corner of ignition
+
+ * Launch navigation2 using `navigation2.launch.py` launch file:
+   ```bash
+   ros2 launch mr_robot_nav navigation2.launch.py
+   ```
+
+  <img src="../images/nav.gif"/>
 <!-- CONTRIBUTING -->
 ## Contributing
 
