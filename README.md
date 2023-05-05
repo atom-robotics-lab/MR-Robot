@@ -111,7 +111,7 @@ This is our repo for the <a href="https://github.com/atom-robotics-lab/MR-Robot"
    cd mr_robot_ws/src
    git clone --branch ros2 git@github.com:atom-robotics-lab/MR-Robot.git
    ```
-2. Source the setup file of ROS 2 Humble and Build the package using colcon:
+2. Source the setup file for your ROS 2 distribution and Build the package using colcon:
    ```sh
    cd ~/mr_robot_ws
    colcon build --symlink-install
@@ -135,9 +135,9 @@ This is our repo for the <a href="https://github.com/atom-robotics-lab/MR-Robot"
 ## Navigation
 
 ### Mapping with Slam Toolbox
-  * Install [slam_toolbox](https://github.com/SteveMacenski/slam_toolbox) from apt for ros2 foxy using:
+  * Install [slam_toolbox](https://github.com/SteveMacenski/slam_toolbox) from apt for your ROS 2 distribution using:
     ```bash
-    sudo apt install ros-foxy-slam-toolbox
+    sudo apt install ros-$ROS_DISTRO-slam-toolbox
     ```
   * Make sure you UNPAUSE physics by clicking "play" button in bottom left corner of ignition
 
@@ -156,7 +156,7 @@ This is our repo for the <a href="https://github.com/atom-robotics-lab/MR-Robot"
    <img src="images/map.gif" />
 
 ### Navigation2
- * Install [navstack2](https://navigation.ros.org/build_instructions/index.html) for ros foxy.
+ * Install [navstack2](https://navigation.ros.org/build_instructions/index.html) for your ROS 2 distribution.
 
  * Make sure you UNPAUSE physics by clicking "play" button in bottom left corner of ignition
 
