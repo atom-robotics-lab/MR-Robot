@@ -111,7 +111,7 @@ This is our repo for the <a href="https://github.com/atom-robotics-lab/MR-Robot"
    cd mr_robot_ws/src
    git clone --branch ros2 git@github.com:atom-robotics-lab/MR-Robot.git
    ```
-2. Source the setup file of ROS 2 Humble and Build the package using colcon:
+2. Source the setup file for your ROS 2 distribution and Build the package using colcon:
    ```sh
    cd ~/mr_robot_ws
    colcon build --symlink-install
@@ -128,9 +128,47 @@ This is our repo for the <a href="https://github.com/atom-robotics-lab/MR-Robot"
  
  This file launches an empty world in Gz Sim includes the [`robot.launch.py`](https://github.com/atom-robotics-lab/MR-Robot/blob/ros2/mr_robot_description/launch/robot.launch.py) launch file which spawns MR Robot using the the xacro files and also launches `rviz2` and `paramter_bridges` for various topics according to the [`bridge.yaml`](https://github.com/atom-robotics-lab/MR-Robot/blob/ros2/mr_robot_description/config/bridge.yaml) file.
  
-![Screenshot from 2023-04-02 17-03-14](https://user-images.githubusercontent.com/23265149/229350481-d145bc9b-6e34-48f1-9de6-067c818278f2.png)
+<img src="images/world1.png"/>
+<img src="images/world2.png"/>
+
+
+## Navigation
+
+### Mapping with Slam Toolbox
+  * Install [slam_toolbox](https://github.com/SteveMacenski/slam_toolbox) from apt for your ROS 2 distribution using:
+    ```bash
+    sudo apt install ros-$ROS_DISTRO-slam-toolbox
+    ```
+  * Make sure you UNPAUSE physics by clicking "play" button in bottom left corner of ignition
+
+ * Open another terminal and launch slam_toolbox for mapping and rviz2 using `online_sync_launch.py` from `mr_robot_nav` package:
+   ```bash
+   ros2 launch mr_robot_nav online_sync_launch.py
+   ```
+ * Open another terminal and run the ros2 `teleop_twist_keyboard` node using:
+   ```bash
+   ros2 run teleop_twist_keyboard teleop_twist_keyboard
+   ```
+ * Use teleop to control the bot and map the world (as shown in the gif below). Save the map using:
+   ```bash
+   ros2 run nav2_map_server map_saver_cli -f name_of_map_file
+   ```
+   <img src="images/map.gif" />
+
+### Navigation2
+ * Install [navstack2](https://navigation.ros.org/build_instructions/index.html) for your ROS 2 distribution.
+
+ * Make sure you UNPAUSE physics by clicking "play" button in bottom left corner of ignition
+
+ * Launch navigation2 using `navigation2.launch.py` launch file:
+   ```bash
+   ros2 launch mr_robot_nav navigation2.launch.py
+   ```
+
+  <img src="images/nav.gif"/>
 
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.

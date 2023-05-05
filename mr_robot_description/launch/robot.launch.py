@@ -77,6 +77,14 @@ def generate_launch_description():
                     'mr_robot/base_link/front_rplidar'
             ])
 
+	map_stf = Node(package='tf2_ros', executable='static_transform_publisher',
+            name = 'map_stf',
+                arguments = [
+                    '2.0', '0', '0', '0', '0', '-1.57', '100',
+                    'map',
+                    'odom'
+            ])
+
 	# use_sim_time launch argument
 	arg_use_sim_time = DeclareLaunchArgument('use_sim_time',
 											default_value='true',
@@ -98,5 +106,6 @@ def generate_launch_description():
 		ros_gz_bridge,
 		rviz,
 		state_publisher,
-		lidar_stf
+		lidar_stf,
+		map_stf
 	])
