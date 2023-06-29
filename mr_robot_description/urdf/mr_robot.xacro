@@ -6,14 +6,10 @@
 <xacro:include filename="$(find mr_robot_description)/gazebo/mr_robot.gazebo" />
 <xacro:include filename="$(find mr_robot_description)/gazebo/mr_robot_plugins.gazebo" />
 
-<!-- <link name ="world"> -->
-<!-- </link> -->
-<!--  -->
-<!-- <joint name="base_joint"> -->
-<!-- <type: "floating"/> -->
-<!-- <parent_frame_id: "world"/> -->
-<!-- <child_frame_id: "base_link"/> -->
-<!-- </joint> -->
+<xacro:arg      name="kinect_enabled"             default="true" />
+<xacro:arg      name="lidar_enabled"              default="true" />
+<xacro:arg      name="camera_enabled"             default="true" />
+
 
 <link name="base_link" gravity="0 0 -9.8">
   <inertial>
@@ -78,6 +74,7 @@
   </collision>
 </link>
 
+<xacro:if value="$(arg lidar_enabled)">
 <link name="lidar_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.006349391522619652 0.0008793633835904074 -0.002389798737942095"/>
@@ -98,6 +95,71 @@
     </geometry>
   </collision>
 </link>
+<joint name="lidar_fixed" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0967 -0.001759 0.108682"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+</xacro:if>
+
+<xacro:if value="$(arg kinect_enabled)">
+	<link name="kinect_camera">
+		<collision>
+		  <origin xyz="0 0 0" rpy="0 0 0" />
+		<geometry>
+			<box size="0.07 0.3 0.09"/>
+		</geometry>
+		</collision>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+		<geometry>
+		<mesh filename="file://$(find mr_robot_description)/meshes/kinect/d415.dae"/>
+		</geometry>
+		<material name="black"/>
+		</visual>
+		<inertial>
+			<mass value="0.01"/>
+      <inertia ixx="${0.01 / 12.0 * (0.09*0.09 + 0.3*0.3)}" ixy="0.0" ixz="0.0" iyy="${0.01 / 12.0 * (0.07*0.07 + 0.3*0.3)}" iyz="0.0" izz="${0.01 / 12.0 * (0.07*0.07 + 0.3*0.3)}"/>
+		</inertial>
+	</link>
+
+	<joint name="kinect_camera_joint" type="fixed">
+			<origin rpy="0 0 0" xyz="0.15 -0.001759 0.073682"/>
+			<parent link="base_link"/>
+			<child link="kinect_camera"/>
+	</joint>
+</xacro:if>
+
+<xacro:if value="$(arg camera_enabled)">
+  <link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="0.05 0.05 0.05"/> 
+        </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="0.05 0.05 0.05"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+  
+  <joint name="camera_joint" type="fixed">  
+   <origin rpy="0 0 0" xyz="0.0967 -0.001759 0.163682"/>
+   <parent link="base_link"/>
+   <child link="camera_link"/>
+  </joint>
+
+</xacro:if>
+
 
 <joint name="right_motor_joint" type="continuous">
   <origin rpy="0 0 0" xyz="-0.003445 -0.10058 0.052283"/>
@@ -113,10 +175,5 @@
   <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
-<joint name="lidar_fixed" type="fixed">
-  <origin rpy="0 0 0" xyz="0.0967 -0.001759 0.108682"/>
-  <parent link="base_link"/>
-  <child link="lidar_1"/>
-</joint>
 
 </robot>

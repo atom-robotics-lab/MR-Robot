@@ -5,6 +5,7 @@
 <xacro:property name="wheel_color" value="Gazebo/Black" />
 <xacro:property name="lidar_color" value="Gazebo/DarkGrey" />
 
+
 <gazebo reference="base_link">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
