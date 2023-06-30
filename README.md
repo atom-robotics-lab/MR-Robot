@@ -164,8 +164,12 @@ In order to run the simulation you are required to do the following:</br>
     ```
   - Launch the gazebo world.
     ```sh
-    roslaunch mr_robot_gazebo turtlebot3_house.launch
+    roslaunch mr_robot_gazebo turtlebot3_house.launch camera_enabled:=true lidar_enabled:=true kinect_enabled:=true
     ```
+    Alternatively, you can toggle the value of the `camera_enabled`, `lidar_enabled` and `kinect_enabled` arguments to enable the 2D camera, LiDAR and the depth camera resp. according to your needs(By default, all three of them are enabled)
+
+    <img src="images/bot.png">
+
   - Launch the navigation file.
     ```sh
     roslaunch mr_robot_nav navigation.launch
