@@ -11,10 +11,10 @@
 	<gazebo>
 		<plugin filename="gz-sim-diff-drive-system" 
 			name="gz::sim::systems::DiffDrive">
-			<left_joint>left_motor_joint</left_joint>
-    		<right_joint>right_motor_joint</right_joint>
-    		<wheel_separation>0.199</wheel_separation>
-    		<wheel_radius>0.0535</wheel_radius>
+			<left_joint>Revolute 10</left_joint>
+    		<right_joint>Revolute 9</right_joint>
+    		<wheel_separation>0.23</wheel_separation>
+    		<wheel_radius>0.112</wheel_radius>
 			<topic>cmd_vel</topic>
 			<odom_topic>odom</odom_topic>
 			<tf_topic>tf</tf_topic>
@@ -96,7 +96,201 @@
     </sensor>
 </gazebo>
 
+<gazebo reference="base_link">
+<visual>
+    <material>
+           <ambient>0.05 0.05 0.05 1</ambient>
+        <diffuse>0.6 0.66 0.6 1</diffuse>
+        <specular>0.2 0.2 0.2 1</specular>
+        <emissive>0 0 0 1</emissive>
 
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="tyre_r_1">
+<visual>
+    <material>
+      <ambient>0.05 0.05 0.05 0</ambient>
+      <diffuse>0.2 0.2 0.2 1</diffuse>
+      <specular>0.5 0.5 0.5 1</specular>
+      <emissive>0 0 0 1</emissive>
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="tyre_l_1">
+<visual>
+    <material>
+ <ambient>0.05 0.05 0.05 0</ambient>
+ <diffuse>0.2 0.2 0.2 1</diffuse>
+ <specular>0.5 0.5 0.5 1</specular>
+ <emissive>0 0 0 1</emissive>
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="lidar_1">
+<visual>
+    <material>
+<ambient>0.1 0.1 0.75 1</ambient>
+<diffuse>0.3 0.3 0.9 1</diffuse>
+<specular>0.5 0.5 0.5 1</specular>
+<emissive>0 0 0 1</emissive>
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="upper_panel_1">
+<visual>
+    <material>
+      <ambient>0.05 0.05 0.05 1</ambient>
+      <diffuse>0.6 0.66 0.6 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <emissive>0 0 0 1</emissive>
+</material>
+  <transparency>0.7</transparency>
+  <cast_shadows>1</cast_shadows>
+
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+
+<gazebo reference="V_Slot_1">
+<visual>
+    <material>
+ <ambient>0.04 0.04 0.04 1</ambient>
+<diffuse>0.8 0.8 0.8 1</diffuse>
+<specular>0.4 0.4 0.4 1</specular>
+<emissive>0 0 0 1</emissive>
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+
+<gazebo reference="LiPo_3S_v2_1">
+<visual>
+    <material>
+          <ambient>0.8 0.28 0.01 1</ambient>
+          <diffuse>0.92 0.58 0.03 1</diffuse>
+          <specular>0.6 0.36 0.02 1</specular>
+          <emissive>0 0 0 1</emissive>
+
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="RPi4ModelB_1">
+<visual>
+    <material>
+          <ambient>0.06 0.24 0.05 1</ambient>
+          <diffuse>0.38 0.84 0.3 1</diffuse>
+          <specular>0.13 0.52 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="PCB_1_1">
+<visual>
+    <material>
+                    <ambient>0.56 0.08 0.009 1</ambient>
+          <diffuse>0.9 0.13 0.012 1</diffuse>
+          <specular>0.6 0.05 0.006 1</specular>
+          <emissive>0 0 0 1</emissive>
+
+
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="PCB__1">
+<visual>
+    <material>
+          <ambient>0.56 0.08 0.009 1</ambient>
+          <diffuse>0.9 0.13 0.012 1</diffuse>
+          <specular>0.6 0.05 0.006 1</specular>
+          <emissive>0 0 0 1</emissive>
+
+
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_driver_1">
+<visual>
+    <material>
+          <ambient>0.38 0.08 0.004 1</ambient>
+          <diffuse>0.76 0.2 0.008 1</diffuse>
+          <specular>0.54 0.06 0.006 1</specular>
+          <emissive>0 0 0 1</emissive>
+
+
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="robotics_1">
+<visual>
+    <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0 0 0 1</emissive>
+
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="atom_1">
+<visual>
+    <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0 0 0 1</emissive>
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
 
 
 </robot>
