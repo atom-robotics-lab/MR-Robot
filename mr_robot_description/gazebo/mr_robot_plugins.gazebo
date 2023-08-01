@@ -5,10 +5,10 @@
 	<gazebo>
 		<plugin filename="gz-sim-diff-drive-system" 
 			name="gz::sim::systems::DiffDrive">
-			<left_joint>left_motor_joint</left_joint>
-    		<right_joint>right_motor_joint</right_joint>
-    		<wheel_separation>0.199</wheel_separation>
-    		<wheel_radius>0.0535</wheel_radius>
+			<left_joint>Revolute 10</left_joint>
+    		<right_joint>Revolute 9</right_joint>
+    		<wheel_separation>0.23</wheel_separation>
+    		<wheel_radius>0.112</wheel_radius>
 			<topic>cmd_vel</topic>
 			<odom_topic>odom</odom_topic>
 			<tf_topic>tf</tf_topic>
@@ -38,7 +38,7 @@
     	      </horizontal>
     	    </scan>
     	    <range>
-    	      <min>0.120000</min>
+    	      <min>0.34</min>
     	      <max>6</max>
     	      <resolution>0.015000</resolution>
     	    </range>
