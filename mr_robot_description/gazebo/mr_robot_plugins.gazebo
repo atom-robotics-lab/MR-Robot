@@ -7,8 +7,8 @@
 			name="gz::sim::systems::DiffDrive">
 			<left_joint>Revolute 10</left_joint>
     		<right_joint>Revolute 9</right_joint>
-    		<wheel_separation>0.23</wheel_separation>
-    		<wheel_radius>0.112</wheel_radius>
+    		<wheel_separation>0.293</wheel_separation>
+    		<wheel_radius>0.110</wheel_radius>
 			<topic>cmd_vel</topic>
 			<odom_topic>odom</odom_topic>
 			<tf_topic>tf</tf_topic>
