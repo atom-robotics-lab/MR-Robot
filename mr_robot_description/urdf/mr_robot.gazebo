@@ -1,0 +1,276 @@
+<?xml version="1.0" ?>
+<robot name="mr_robot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/Silver" />
+
+<gazebo>
+  <plugin name="control" filename="libgazebo_ros_control.so"/>
+</gazebo>
+
+<gazebo>
+    <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller" >
+      <legacyMode>false</legacyMode>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>40</updateRate>
+      <leftJoint>Revolute 10</leftJoint>
+      <rightJoint>Revolute 9</rightJoint>
+      <wheelSeparation>0.293</wheelSeparation>
+      <wheelDiameter>0.110</wheelDiameter>
+      <torque>20</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>base_link</robotBaseFrame>
+
+      <!--         ADDED       -->
+      <publishWheelTF>false</publishWheelTF>
+      <publishWheelJointState>true</publishWheelJointState>
+      <rosDebugLevel>na</rosDebugLevel>
+      <wheelAcceleration>0</wheelAcceleration>
+      <wheelTorque>20</wheelTorque>
+      <publishTf>true</publishTf>
+      <publishOdom>true</publishOdom>
+      <publishOdomTF>true</publishOdomTF>
+      <odometrySource>world</odometrySource>
+      <!-- <covariance_x>0.0001</covariance_x>
+            <covariance_y>0.0001</covariance_y>
+            <covariance_z>0.0001</covariance_z> -->
+<!--                            -->
+
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="lidar_1">
+		<sensor name="front_rplidar" type="ray">
+			<always_on>true</always_on>
+			<visualize>false</visualize>
+			<pose>-0.064 0 0.121 0 0 0</pose>
+			<update_rate>5</update_rate>
+			<ray>
+			  <scan>
+				<horizontal>
+				  <samples>360</samples>
+				  <resolution>1.000000</resolution>
+				  <min_angle>0.000000</min_angle>
+				  <max_angle>6.280000</max_angle>
+				</horizontal>
+			  </scan>
+			  <range>
+				<min>0.120000</min>
+				<max>6</max>
+				<resolution>0.015000</resolution>
+			  </range>
+			  <noise>
+				<type>gaussian</type>
+				<mean>0.0</mean>
+				<stddev>0.01</stddev>
+			  </noise>
+			</ray>
+			<plugin name="gazebo_ros_front_rplidar_controller" filename="libgazebo_ros_laser.so">
+				<topicName>/laser/scan</topicName>
+				<frameName>lidar_1</frameName>
+			</plugin>
+		  </sensor>
+	</gazebo>
+
+
+
+
+  
+<gazebo reference="base_link">
+<visual>
+    <material>
+           <ambient>0.05 0.05 0.05 1</ambient>
+        <diffuse>0.6 0.66 0.6 1</diffuse>
+        <specular>0.2 0.2 0.2 1</specular>
+        <emissive>0 0 0 1</emissive>
+
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="tyre_r_1">
+<visual>
+    <material>
+      <ambient>0.05 0.05 0.05 0</ambient>
+      <diffuse>0.2 0.2 0.2 1</diffuse>
+      <specular>0.5 0.5 0.5 1</specular>
+      <emissive>0 0 0 1</emissive>
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="tyre_l_1">
+<visual>
+    <material>
+ <ambient>0.05 0.05 0.05 0</ambient>
+ <diffuse>0.2 0.2 0.2 1</diffuse>
+ <specular>0.5 0.5 0.5 1</specular>
+ <emissive>0 0 0 1</emissive>
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="lidar_1">
+<visual>
+    <material>
+<ambient>0.1 0.1 0.75 1</ambient>
+<diffuse>0.3 0.3 0.9 1</diffuse>
+<specular>0.5 0.5 0.5 1</specular>
+<emissive>0 0 0 1</emissive>
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="upper_panel_1">
+<visual>
+    <material>
+      <ambient>0.05 0.05 0.05 1</ambient>
+      <diffuse>0.6 0.66 0.6 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <emissive>0 0 0 1</emissive>
+</material>
+  <transparency>0.7</transparency>
+  <cast_shadows>1</cast_shadows>
+
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+
+<gazebo reference="V_Slot_1">
+<visual>
+    <material>
+ <ambient>0.04 0.04 0.04 1</ambient>
+<diffuse>0.8 0.8 0.8 1</diffuse>
+<specular>0.4 0.4 0.4 1</specular>
+<emissive>0 0 0 1</emissive>
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+
+<gazebo reference="LiPo_3S_v2_1">
+<visual>
+    <material>
+          <ambient>0.8 0.28 0.01 1</ambient>
+          <diffuse>0.92 0.58 0.03 1</diffuse>
+          <specular>0.6 0.36 0.02 1</specular>
+          <emissive>0 0 0 1</emissive>
+
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="RPi4ModelB_1">
+<visual>
+    <material>
+          <ambient>0.06 0.24 0.05 1</ambient>
+          <diffuse>0.38 0.84 0.3 1</diffuse>
+          <specular>0.13 0.52 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="PCB_1_1">
+<visual>
+    <material>
+                    <ambient>0.56 0.08 0.009 1</ambient>
+          <diffuse>0.9 0.13 0.012 1</diffuse>
+          <specular>0.6 0.05 0.006 1</specular>
+          <emissive>0 0 0 1</emissive>
+
+
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="PCB__1">
+<visual>
+    <material>
+          <ambient>0.56 0.08 0.009 1</ambient>
+          <diffuse>0.9 0.13 0.012 1</diffuse>
+          <specular>0.6 0.05 0.006 1</specular>
+          <emissive>0 0 0 1</emissive>
+
+
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_driver_1">
+<visual>
+    <material>
+          <ambient>0.38 0.08 0.004 1</ambient>
+          <diffuse>0.76 0.2 0.008 1</diffuse>
+          <specular>0.54 0.06 0.006 1</specular>
+          <emissive>0 0 0 1</emissive>
+
+
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="robotics_1">
+<visual>
+    <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0 0 0 1</emissive>
+
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="atom_1">
+<visual>
+    <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0 0 0 1</emissive>
+</material>
+</visual>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+</robot>

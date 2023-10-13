@@ -1,8 +1,8 @@
 <launch>
 
 <rosparam file="$(find mr_robot_description)/launch/controller.yaml" command="load"/>
-<node args="right_motor_joint_position_controller left_motor_joint_position_controller joint_state_controller " name="controller_spawner" ns="mr_robot" output="screen" pkg="controller_manager" respawn="false" type="spawner"/>
-<node name="robot_state_publisher" output="screen" pkg="robot_state_publisher" respawn="false" type="robot_state_publisher">
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="mr_robot" args="Revolute 10_position_controller Revolute 9_position_controller joint_state_controller "/>
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
   <remap from="/joint_states" to="/mr_robot/joint_states"/>
 </node>
 

@@ -10,9 +10,9 @@
   <!--This sets robot_description param, launches rviz, 
   robot_state_publisher and joint_state_publisher-->
   <include file="$(find mr_robot_description)/launch/display.launch" >
-    <arg name="camera_enabled" value="$(arg camera_enabled)"/>
+    <!-- <arg name="camera_enabled" value="$(arg camera_enabled)"/>
     <arg name="lidar_enabled" value="$(arg lidar_enabled)"/>
-    <arg name="kinect_enabled" value="$(arg kinect_enabled)"/>
+    <arg name="kinect_enabled" value="$(arg kinect_enabled)"/> -->
   </include>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">

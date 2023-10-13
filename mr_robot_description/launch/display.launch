@@ -1,14 +1,9 @@
 <launch>
-  <arg default="$(find mr_robot_description)/urdf/mr_robot.xacro" name="model"/>-
-  <arg default="true" name="gui"/>
-  <arg name="camera_enabled" default="true"/>
-  <arg name="lidar_enabled" default="true"/>
-  <arg name="kinect_enabled" default="true"/>
-
-  <arg default="$(find mr_robot_description)/launch/urdf.rviz" name="rvizconfig"/>
-  <param name="robot_description" command=" $(find xacro)/xacro '$(find mr_robot_description)/urdf/mr_robot.xacro'  camera_enabled:=$(arg camera_enabled)  lidar_enabled:=$(arg lidar_enabled) kinect_enabled:=$(arg kinect_enabled)" />
-  <param name="use_gui" value="$(arg gui)"/>'
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+  <arg name="model" default="$(find mr_robot_description)/urdf/mr_robot.xacro"/>
+  <arg name="gui" default="true"/>
+  <arg name="rvizconfig" default="$(find mr_robot_description)/launch/urdf.rviz"/>
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>
+  <param name="use_gui" value="$(arg gui)"/>
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
-  <node args="-d $(arg rvizconfig)" name="rviz" pkg="rviz" required="true" type="rviz"/>
+  <node name="rviz" pkg="rviz" args="-d $(arg rvizconfig)" type="rviz" required="true"/>
 </launch>

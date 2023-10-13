@@ -3,179 +3,352 @@
 
 <xacro:include filename="$(find mr_robot_description)/urdf/materials.xacro" />
 <xacro:include filename="$(find mr_robot_description)/urdf/mr_robot.trans" />
-<xacro:include filename="$(find mr_robot_description)/gazebo/mr_robot.gazebo" />
-<xacro:include filename="$(find mr_robot_description)/gazebo/mr_robot_plugins.gazebo" />
-
-<xacro:arg      name="kinect_enabled"             default="true" />
-<xacro:arg      name="lidar_enabled"              default="true" />
-<xacro:arg      name="camera_enabled"             default="true" />
-
+<xacro:include filename="$(find mr_robot_description)/urdf/mr_robot.gazebo" />
 <link name="base_link">
   <inertial>
-    <origin rpy="0 0 0" xyz="-0.00101458512283434 -0.0007739653318165107 0.06722998744578039"/>
-    <mass value="11.545387094155112"/>
-    <inertia ixx="0.101768" ixy="-1.2e-05" ixz="0.000834" iyy="0.108037" iyz="4.2e-05" izz="0.192707"/>
+    <origin xyz="-0.013574303125599586 0.000311968832464644 0.02447814861373481" rpy="0 0 0"/>
+    <mass value="12.51762642347825"/>
+    <inertia ixx="0.228696" iyy="0.23871" izz="0.447823" ixy="-0.001289" iyz="3.7e-05" ixz="0.009889"/>
   </inertial>
   <visual>
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://mr_robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://mr_robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="r_tyre_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="9.682659047986764e-08 -0.002525549104224978 -5.1894622932202594e-08"/>
-    <mass value="1.4397484276442625"/>
-    <inertia ixx="0.00144" ixy="-0.0" ixz="-0.0" iyy="0.00246" iyz="0.0" izz="0.00144"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="0.003445 0.10058 -0.052283"/>
-    <geometry>
-      <mesh filename="package://mr_robot_description/meshes/r_tyre_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="0.003445 0.10058 -0.052283"/>
-    <geometry>
-      <mesh filename="package://mr_robot_description/meshes/r_tyre_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
-<link name="l_tyre_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="9.682664276963737e-08 0.0025262758714060807 -5.18946233832307e-08"/>
-    <mass value="1.4397484276442625"/>
-    <inertia ixx="0.00144" ixy="-0.0" ixz="0.0" iyy="0.00246" iyz="-0.0" izz="0.00144"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="0.003445 -0.09882 -0.052283"/>
-    <geometry>
-      <mesh filename="package://mr_robot_description/meshes/l_tyre_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="0.003445 -0.09882 -0.052283"/>
-    <geometry>
-      <mesh filename="package://mr_robot_description/meshes/l_tyre_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
-<xacro:if value="$(arg lidar_enabled)">
 <link name="lidar_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="-0.006349391522619652 0.0008793633835904074 -0.002389798737942095"/>
-    <mass value="1.1515616542314233"/>
-    <inertia ixx="0.000489" ixy="-0.0" ixz="-0.000148" iyy="0.000861" iyz="0.0" izz="0.000987"/>
+    <origin xyz="-0.08827260531446418 0.001000000201164283 0.07100205735814664" rpy="0 0 0"/>
+    <mass value="1.1655252594710734"/>
+    <inertia ixx="0.000543" iyy="0.000915" izz="0.001009" ixy="0.0" iyz="0.0" ixz="-0.000147"/>
   </inertial>
   <visual>
-    <origin rpy="0 0 0" xyz="-0.0967 0.001759 -0.108682"/>
+    <origin xyz="-0.1035 -0.0 -0.08" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://mr_robot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="blue"/>
   </visual>
   <collision>
-    <origin rpy="0 0 0" xyz="-0.0967 0.001759 -0.108682"/>
+    <origin xyz="-0.1035 -0.0 -0.08" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://mr_robot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
-  
-  <joint name="lidar_fixed" type="fixed">
-  <origin rpy="0 0 0" xyz="0.0967 -0.001759 0.108682"/>
+
+<link name="motor_driver_1">
+  <inertial>
+    <origin xyz="0.0003955010685048353 0.00213711267527277 0.0064417706089128545" rpy="0 0 0"/>
+    <mass value="0.05766626670761933"/>
+    <inertia ixx="1.2e-05" iyy="9e-06" izz="1.5e-05" ixy="0.0" iyz="-2e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/motor_driver_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="dark_red"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/motor_driver_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="PCB_1_1">
+  <inertial>
+    <origin xyz="-0.03640860143697952 0.05644244297723344 0.0007999999999997279" rpy="0 0 0"/>
+    <mass value="0.09316520405438372"/>
+    <inertia ixx="8.2e-05" iyy="4.1e-05" izz="0.000123" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.16625 0.15 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/PCB_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="green"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.16625 0.15 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/PCB_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="PCB__1">
+  <inertial>
+    <origin xyz="-0.03643399332513472 -0.05640958374120579 0.0008000000000003021" rpy="0 0 0"/>
+    <mass value="0.09316520405438372"/>
+    <inertia ixx="8.2e-05" iyy="4.1e-05" izz="0.000123" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.16625 -0.15 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/PCB__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="green"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.16625 -0.15 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/PCB__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="tyre_l_1">
+  <inertial>
+    <origin xyz="4.137530711784392e-07 -0.03712255732102415 -1.2111881497745003e-07" rpy="0 0 0"/>
+    <mass value="1.983568904838765"/>
+    <inertia ixx="0.002221" iyy="0.003828" izz="0.002221" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.000791 -0.147386 -0.014723" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/tyre_l_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.000791 -0.147386 -0.014723" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/tyre_l_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="tyre_r_1">
+  <inertial>
+    <origin xyz="-4.1375306849186755e-07 0.03716672560547965 -1.211188152480669e-07" rpy="0 0 0"/>
+    <mass value="1.9850106278661588"/>
+    <inertia ixx="0.002226" iyy="0.003828" izz="0.002226" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.000109 0.147386 -0.014723" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/tyre_r_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.000109 0.147386 -0.014723" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/tyre_r_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="LiPo_3S_v2_1">
+  <inertial>
+    <origin xyz="0.03620000000000145 -0.03991462047942949 0.022424999999999796" rpy="0 0 0"/>
+    <mass value="1.1316523601774637"/>
+    <inertia ixx="0.004185" iyy="0.000601" izz="0.004409" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.173 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/LiPo_3S_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="orange"/>
+  </visual>
+  <collision>
+    <origin xyz="0.173 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/LiPo_3S_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="red_wire_1">
+  <inertial>
+    <origin xyz="-0.05960107486890705 0.0026232397316060113 0.012078506761870507" rpy="0 0 0"/>
+    <mass value="0.016199442069398183"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.064 -0.073886 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/red_wire_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="red"/>
+  </visual>
+  <collision>
+    <origin xyz="0.064 -0.073886 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/red_wire_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="black_wire_1">
+  <inertial>
+    <origin xyz="-0.07060107486890682 0.002623239731605942 0.012078506761870535" rpy="0 0 0"/>
+    <mass value="0.016199442069398183"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.064 -0.073886 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/black_wire_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.064 -0.073886 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/black_wire_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="upper_panel_1">
+  <inertial>
+    <origin xyz="-0.16981107647233692 -0.1874964863522696 0.01845928079506233" rpy="0 0 0"/>
+    <mass value="7.649753398983414"/>
+    <inertia ixx="0.111429" iyy="0.097265" izz="0.205922" ixy="1.5e-05" iyz="-5e-06" ixz="0.001292"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.187506 -0.187494 -0.07" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/upper_panel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="translucent"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.187506 -0.187494 -0.07" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/upper_panel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="RPi4ModelB_1">
+  <inertial>
+    <origin xyz="-0.037026936530551585 -0.000544166088421207 0.08100406173018841" rpy="0 0 0"/>
+    <mass value="0.04363865099595201"/>
+    <inertia ixx="1.3e-05" iyy="3e-05" izz="4e-05" ixy="0.0" iyz="-0.0" ixz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/RPi4ModelB_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="green"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/RPi4ModelB_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="V_Slot_1">
+  <inertial>
+    <origin xyz="4.426146948954823e-15 -0.16213021189797977 0.11568032411813599" rpy="0 0 0"/>
+    <mass value="0.9613817576893465"/>
+    <inertia ixx="0.004833" iyy="0.010478" izz="0.015232" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.001 -0.071886 -0.1143" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/V_Slot_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.001 -0.071886 -0.1143" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mr_robot_description/meshes/V_Slot_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid 26" type="fixed">
+  <origin xyz="0.1035 0.0 0.08" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="lidar_1"/>
 </joint>
-</xacro:if>
 
-<xacro:if value="$(arg camera_enabled)">
- <link name="camera_link">
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-    <box size="0.05 0.05 0.05"/> 
-        </geometry>
-    </collision>
-
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-    <box size="0.05 0.05 0.05"/>
-      </geometry>
-      <material name="red"/>
-    </visual>
-
-    <inertial>
-      <mass value="1e-5" />
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
-    </inertial>
-  </link>
-
-  <joint name="camera_joint" type="fixed">
-  
-  <origin rpy="0 0 0" xyz="0.0967 -0.001759 0.163682"/>
+<joint name="Rigid 41" type="fixed">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="camera_link"/>
-</joint> 
-</xacro:if>
+  <child link="motor_driver_1"/>
+</joint>
 
-<xacro:if value="$(arg kinect_enabled)">
-	<link name="kinect_camera">
-		<collision>
-		  <origin xyz="0 0 0" rpy="0 0 0" />
-		<geometry>
-			<box size="0.07 0.3 0.09"/>
-		</geometry>
-		</collision>
-		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-		<geometry>
-		<mesh filename="file://$(find mr_robot_description)/meshes/kinect/d415.dae"/>
-		</geometry>
-		<material name="black"/>
-		</visual>
-		<inertial>
-			<mass value="0.01"/>
-      <inertia ixx="${0.01 / 12.0 * (0.09*0.09 + 0.3*0.3)}" ixy="0.0" ixz="0.0" iyy="${0.01 / 12.0 * (0.07*0.07 + 0.3*0.3)}" iyz="0.0" izz="${0.01 / 12.0 * (0.07*0.07 + 0.3*0.3)}"/>
-		</inertial>
-	</link>
-
-	<joint name="kinect_camera_joint" type="fixed">
-			<origin rpy="0 0 0" xyz="0.15 -0.001759 0.073682"/>
-			<parent link="base_link"/>
-			<child link="kinect_camera"/>
-	</joint>
-</xacro:if>
-
-<joint name="right_motor_joint" type="continuous">
-  <origin rpy="0 0 0" xyz="-0.003445 -0.10058 0.052283"/>
+<joint name="Rigid 42" type="fixed">
+  <origin xyz="0.16625 -0.15 0.0" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="r_tyre_1"/>
+  <child link="PCB_1_1"/>
+</joint>
+
+<joint name="Rigid 43" type="fixed">
+  <origin xyz="0.16625 0.15 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="PCB__1"/>
+</joint>
+
+<joint name="Revolute 10" type="continuous">
+  <origin xyz="0.000791 0.147386 0.014723" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="tyre_l_1"/>
   <axis xyz="-0.0 1.0 -0.0"/>
 </joint>
 
-<joint name="left_motor_joint" type="continuous">
-  <origin rpy="0 0 0" xyz="-0.003445 0.09882 0.052283"/>
+<joint name="Revolute 9" type="continuous">
+  <origin xyz="0.000109 -0.147386 0.014723" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="l_tyre_1"/>
-  <axis xyz="0.0 1.0 0.0"/>
+  <child link="tyre_r_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
 </joint>
 
+<joint name="Rigid 53" type="fixed">
+  <origin xyz="-0.173 0.0 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="LiPo_3S_v2_1"/>
+</joint>
 
+<joint name="Rigid 60" type="fixed">
+  <origin xyz="-0.064 0.073886 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="red_wire_1"/>
+</joint>
+
+<joint name="Rigid 61" type="fixed">
+  <origin xyz="-0.064 0.073886 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="black_wire_1"/>
+</joint>
+
+<joint name="Rigid 62" type="fixed">
+  <origin xyz="0.187506 0.187494 0.07" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="upper_panel_1"/>
+</joint>
+
+<joint name="Rigid 63" type="fixed">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="RPi4ModelB_1"/>
+</joint>
+
+<joint name="Rigid 64" type="fixed">
+  <origin xyz="0.001 0.062886 0.1143" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="V_Slot_1"/>
+</joint>
 
 </robot>

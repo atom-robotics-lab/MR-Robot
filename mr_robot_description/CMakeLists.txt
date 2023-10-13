@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.0.2)
 project(mr_robot_description)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
@@ -9,6 +9,10 @@ project(mr_robot_description)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   rospy
+  gazebo_ros
+  geometry_msgs
+  std_msgs
+  tf
 )
 
 ## System dependencies are found with CMake's conventions
