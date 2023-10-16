@@ -278,7 +278,7 @@
 </link>
 
 <joint name="Rigid 26" type="fixed">
-  <origin xyz="0.1035 0.0 0.08" rpy="0 0 0"/>
+  <origin xyz="0.1035 0.0 0.08" rpy="0 0 3.14"/>
   <parent link="base_link"/>
   <child link="lidar_1"/>
 </joint>
